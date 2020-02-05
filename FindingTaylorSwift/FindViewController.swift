@@ -9,6 +9,12 @@
 import UIKit
 import CropViewController
 
+protocol ProgressErrorDelegate: class {
+    func showErrorAlert(errorMessage: String)
+    func startProgressBar()
+    func completeProgressBar()
+}
+
 class FindViewController: UIViewController, CropViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var selectImage: UIBarButtonItem!
@@ -19,10 +25,11 @@ class FindViewController: UIViewController, CropViewControllerDelegate, UIImageP
     private var croppingStyle = CropViewCroppingStyle.default
     private var croppedRect = CGRect.zero
     private var croppedAngle = 0
+    private var awsFilehandle = AWSFileHandler()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let attributes = [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17)]
         self.navigationController?.navigationBar.titleTextAttributes = attributes
         self.navigationController?.navigationBar.isTranslucent = false
@@ -44,10 +51,9 @@ class FindViewController: UIViewController, CropViewControllerDelegate, UIImageP
         
         let tapRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(didTapImageView))
         imageView.addGestureRecognizer(tapRecognizer)
-        
-        
+        awsFilehandle.delegate = self
     }
-       
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -163,6 +169,37 @@ class FindViewController: UIViewController, CropViewControllerDelegate, UIImageP
         }
         
         navigationItem.title = "Uploading Image..."
-        //awsFilehandle.uploadFile(withImage: image, bucketName: "match-image")
+        awsFilehandle.uploadFile(withImage: image, bucketName: "match-image")
     }
 }
+
+extension FindViewController: ProgressErrorDelegate {
+    
+    internal func showErrorAlert(errorMessage: String){
+        
+        let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default) { action in
+            print("Pressed OK")
+        }
+        alertController.addAction(OKAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    internal func startProgressBar() {
+        
+        let notification = ProgressNotification(.executing)
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: ProgressNotificationDetails.kProgressUpdateNotification), object: notification)
+        }
+    }
+    
+    internal func completeProgressBar() {
+        
+        let notification = ProgressNotification(.done)
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: ProgressNotificationDetails.kProgressUpdateNotification), object: notification)
+        }
+        self.navigationItem.title = "FINDING TAYLOR SWIFT"
+    }
+}
+

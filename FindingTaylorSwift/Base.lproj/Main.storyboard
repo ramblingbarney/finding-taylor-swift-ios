@@ -68,7 +68,7 @@
                                 <action selector="clickSelectImage:" destination="V66-4J-Omb" id="9oa-3F-heH"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="upload" image="tray.and.arrow.up" catalog="system" landscapeImage="tray.and.arrow.up" largeContentSizeImage="tray.and.arrow.up" id="Khv-eJ-mCc">
+                        <barButtonItem key="rightBarButtonItem" title="find" id="Khv-eJ-mCc">
                             <connections>
                                 <action selector="clickUploadSelectedImage:" destination="V66-4J-Omb" id="lrA-9t-fxX"/>
                             </connections>
@@ -148,6 +148,5 @@
         <image name="magnifyingglass.circle" catalog="system" width="64" height="60"/>
         <image name="photo.on.rectangle" catalog="system" width="64" height="48"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
-        <image name="tray.and.arrow.up" catalog="system" width="64" height="56"/>
     </resources>
 </document>

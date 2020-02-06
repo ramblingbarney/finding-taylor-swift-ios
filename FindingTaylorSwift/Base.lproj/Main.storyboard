@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ied-Nn-CnW">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Swiftie View Controller-->
+        <scene sceneID="tbl-fQ-LcB">
+            <objects>
+                <viewController id="TGB-oR-XZt" customClass="SwiftieViewController" customModule="FindingTaylorSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SKN-US-TBC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.66666666669999997" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Guj-vr-VHG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="k8F-GT-3NY">
+                        <barButtonItem key="rightBarButtonItem" title="Share" image="square.and.arrow.up" catalog="system" landscapeImage="square.and.arrow.up" largeContentSizeImage="square.and.arrow.up" id="bQ0-sg-LaA"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nug-HF-yvl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="573.60000000000002" y="429.53523238380814"/>
+        </scene>
         <!--help-->
         <scene sceneID="mM1-U8-fW4">
             <objects>
                 <viewController id="Umx-5G-gxc" customClass="InformationViewController" customModule="FindingTaylorSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V9n-Eg-YKu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.66666666666666663" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="yQa-Z6-BQg"/>
@@ -21,25 +39,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jqa-zu-Skd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="263" y="54"/>
+            <point key="canvasLocation" x="1200.8" y="53.523238380809602"/>
         </scene>
         <!--Find View Controller-->
         <scene sceneID="aTN-sP-kUe">
             <objects>
                 <viewController id="V66-4J-Omb" customClass="FindViewController" customModule="FindingTaylorSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gxU-dm-WJa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2p0-wa-bJU">
-                                <rect key="frame" x="5" y="94" width="404" height="714"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2p0-wa-bJU">
+                                <rect key="frame" x="5" y="49" width="365" height="613"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.66666666666666663" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="2p0-wa-bJU" firstAttribute="top" secondItem="tsH-xO-gb6" secondAttribute="top" constant="5" id="Fcc-Ma-vTc"/>
+                            <constraint firstAttribute="bottom" secondItem="2p0-wa-bJU" secondAttribute="bottom" constant="5" id="hEH-r9-f1P"/>
                             <constraint firstItem="2p0-wa-bJU" firstAttribute="leading" secondItem="tsH-xO-gb6" secondAttribute="leading" constant="5" id="oX7-u7-Z7p"/>
                             <constraint firstItem="tsH-xO-gb6" firstAttribute="trailing" secondItem="2p0-wa-bJU" secondAttribute="trailing" constant="5" id="vSw-vM-3on"/>
-                            <constraint firstItem="2p0-wa-bJU" firstAttribute="top" secondItem="tsH-xO-gb6" secondAttribute="top" constant="5" id="yI7-ZG-CtX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tsH-xO-gb6"/>
                     </view>
@@ -49,7 +68,7 @@
                                 <action selector="clickSelectImage:" destination="V66-4J-Omb" id="9oa-3F-heH"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="upload" image="square.and.arrow.up" catalog="system" landscapeImage="square.and.arrow.up" largeContentSizeImage="square.and.arrow.up" id="Khv-eJ-mCc">
+                        <barButtonItem key="rightBarButtonItem" title="upload" image="tray.and.arrow.up" catalog="system" landscapeImage="tray.and.arrow.up" largeContentSizeImage="tray.and.arrow.up" id="Khv-eJ-mCc">
                             <connections>
                                 <action selector="clickUploadSelectedImage:" destination="V66-4J-Omb" id="lrA-9t-fxX"/>
                             </connections>
@@ -76,6 +95,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="4Me-FC-ZYW" kind="relationship" relationship="viewControllers" id="A9f-mK-FdY"/>
+                        <segue destination="pEP-m8-928" kind="relationship" relationship="viewControllers" id="PFX-d9-SO5"/>
                         <segue destination="Umx-5G-gxc" kind="relationship" relationship="viewControllers" id="4ow-WF-ryX"/>
                     </connections>
                 </tabBarController>
@@ -90,7 +110,7 @@
                     <tabBarItem key="tabBarItem" title="find" image="magnifyingglass.circle" catalog="system" landscapeImage="magnifyingglass.circle" largeContentSizeImage="magnifyingglass.circle" selectedImage="magnifyingglass.circle" id="fSf-ip-zes"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xWR-gU-dvC">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -102,11 +122,32 @@
             </objects>
             <point key="canvasLocation" x="262.31884057971018" y="-595.3125"/>
         </scene>
+        <!--Swifties-->
+        <scene sceneID="oZM-HA-6I7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pEP-m8-928" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Swifties" image="photo.on.rectangle" catalog="system" landscapeImage="photo.on.rectangle" largeContentSizeImage="photo.on.rectangle" id="jPu-Ee-jLS"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="foS-KE-ggJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TGB-oR-XZt" kind="relationship" relationship="rootViewController" id="56b-pT-Pds"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hc0-aE-qNQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-218" y="493"/>
+        </scene>
     </scenes>
     <resources>
         <image name="camera.on.rectangle" catalog="system" width="64" height="48"/>
         <image name="info.circle" catalog="system" width="64" height="60"/>
         <image name="magnifyingglass.circle" catalog="system" width="64" height="60"/>
+        <image name="photo.on.rectangle" catalog="system" width="64" height="48"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
+        <image name="tray.and.arrow.up" catalog="system" width="64" height="56"/>
     </resources>
 </document>

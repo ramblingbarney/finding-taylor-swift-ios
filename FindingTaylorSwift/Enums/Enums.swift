@@ -20,12 +20,12 @@ enum KeychainError: Error {
 }
 
 enum EndPoints {
-    
+
     static let instructions = "/instructions"
 }
 
 enum ProcessingServer {
-    
+
     static let scheme = "http"
     static let host = "localhost"
     static let port = 8080

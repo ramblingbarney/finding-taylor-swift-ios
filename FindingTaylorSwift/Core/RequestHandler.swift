@@ -17,17 +17,15 @@ protocol Parser {
 }
 
 struct JSONParser: Parser {
-    
-    func parse<T>(_ data: Data, into: T.Type, completion: (Outcome<T>) -> Void) where T : Decodable, T : Encodable {
-        
+
+    func parse<T>(_ data: Data, into: T.Type, completion: (Outcome<T>) -> Void) where T: Decodable, T: Encodable {
+
         do {
             let result = try JSONDecoder().decode(into, from: data)
             completion(.success(result))
         } catch {
             completion(.failure(error.localizedDescription))
         }
-        
-    }
-    
-}
 
+    }
+}

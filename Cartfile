@@ -1,3 +1,4 @@
 github "TimOliver/TOCropViewController"
 github "aws-amplify/aws-sdk-ios"
 github "evgenyneu/keychain-swift" ~> 18.0
+github "OAuthSwift/OAuthSwift" ~> 2.0.0

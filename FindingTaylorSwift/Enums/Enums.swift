@@ -20,18 +20,19 @@ enum KeychainError: Error {
 }
 
 enum EndPoints {
-
     static let instructions = "/instructions"
 }
 
 enum ProcessingServer {
-
     static let scheme = "http"
     static let host = "localhost"
     static let port = 8080
 }
 
 enum RandomLetters {
-
     static let letters: NSMutableString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+}
+
+enum SeenHelpInformation {
+    static let seenHelp = "seenHelpInformation"
 }

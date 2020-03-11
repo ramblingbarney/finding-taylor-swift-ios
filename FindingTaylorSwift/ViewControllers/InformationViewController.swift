@@ -16,6 +16,6 @@ class InformationViewController: UIViewController {
         super.viewDidLoad()
 
         // Set the Show Help Screen Switch
-        self.defaults.set(true, forKey: "seenHelpInformation")
+        self.defaults.set(true, forKey: SeenHelpInformation.seenHelp)
     }
 }

@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let defaults = UserDefaults.standard
 
-        let seenHelpInformation = defaults.bool(forKey: "seenHelpInformation")
+        let seenHelpInformation = defaults.bool(forKey: SeenHelpInformation.seenHelp)
 
         if let tabBarController = self.window!.rootViewController as? UITabBarController {
 

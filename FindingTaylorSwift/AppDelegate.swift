@@ -15,17 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         let defaults = UserDefaults.standard
-        // Mark: - UUID for later encryption and user identificationmark
+        // MARK: - UUID for later encryption and user identificationmark
         if defaults.object(forKey: "ApplicationUniqueIdentifier") == nil {
             let UUID = NSUUID().uuidString
             defaults.set(UUID, forKey: "ApplicationUniqueIdentifier")
             defaults.synchronize()
         }
-        
+
         // Override point for customization after application launch.
         return true
     }
-    
+
     // MARK: UISceneSession Lifecycle
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
@@ -34,13 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-
     }
-    
-    // MARK: - Core Data stack
 
+    // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
-        
+
         let container = NSPersistentContainer(name: "FindingTaylorSwift")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -50,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
-
     // MARK: - Core Data Saving support
 
     func saveContext () {
@@ -59,7 +56,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             do {
                 try context.save()
             } catch {
-
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }

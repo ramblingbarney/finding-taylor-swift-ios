@@ -14,18 +14,18 @@ struct KeychainConfiguration {
 
     static let accessGroup: String? = nil
 
-   private init(){}
+   private init() { }
 }
 
 struct Instruction: Codable {
-    
+
     let instructionID: String
     let revID: String
     let descriptionText: String
     let headlineText: String
     let productName: String
     let rowOrder: Int64
-    
+
     private enum CodingKeys: String, CodingKey {
         case instructionID = "_id"
         case revID = "_rev"

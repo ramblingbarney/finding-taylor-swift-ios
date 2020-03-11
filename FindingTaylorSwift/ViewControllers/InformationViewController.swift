@@ -9,25 +9,13 @@
 import UIKit
 
 class InformationViewController: UIViewController {
-    
+
     let defaults = UserDefaults.standard
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Set the Show Help Screen Switch
         self.defaults.set(true, forKey: "seenHelpInformation")
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

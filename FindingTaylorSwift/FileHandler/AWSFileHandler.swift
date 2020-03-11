@@ -73,7 +73,7 @@ class AWSFileHandler {
 
     private func generateRandomStringWithLength(length: Int) -> String {
         let randomString: NSMutableString = NSMutableString(capacity: length)
-        let letters: NSMutableString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let letters: NSMutableString = RandomLetters.letters
         var counter: Int = 0
 
         while counter < length {

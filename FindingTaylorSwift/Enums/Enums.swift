@@ -30,3 +30,8 @@ enum ProcessingServer {
     static let host = "localhost"
     static let port = 8080
 }
+
+enum RandomLetters {
+
+    static let letters: NSMutableString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+}

@@ -52,7 +52,12 @@ class AWSFileHandler {
         }
 
         let transferUtility = AWSS3TransferUtility.default()
-        transferUtility.uploadData(data, bucket: s3BucketName, key: remoteName, contentType: "image/" + ".png", expression: expression, completionHandler: completionHandler).continueWith { (task) -> Any? in
+        transferUtility.uploadData(data,
+                                   bucket: s3BucketName,
+                                   key: remoteName,
+                                   contentType: "image/" + ".png",
+                                   expression: expression,
+                                   completionHandler: completionHandler).continueWith { (task) -> Any? in
             if let error = task.error {
                 // delegate the error
                 print("Error : \(error.localizedDescription)")

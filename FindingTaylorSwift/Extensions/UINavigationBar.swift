@@ -16,13 +16,18 @@ extension UINavigationController {
         progressView.tag = ProgressNotificationDetails.kProgressViewTag
         self.view.addSubview(progressView)
         let navBar = self.navigationBar
-        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[navBar]-0-[progressView]", options: .directionLeadingToTrailing, metrics: nil, views: ["progressView": progressView, "navBar": navBar]))
+        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[navBar]-0-[progressView]",
+                                options: .directionLeadingToTrailing,
+                                metrics: nil,
+                                views: ["progressView": progressView, "navBar": navBar]))
         self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[progressView]|", options: .directionLeadingToTrailing, metrics: nil, views: ["progressView": progressView]))
 
         progressView.translatesAutoresizingMaskIntoConstraints = false
         progressView.setProgress(0.0, animated: false)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(UINavigationController.didReceiveNotification(notification:)), name: NSNotification.Name(rawValue: ProgressNotificationDetails.kProgressUpdateNotification), object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(UINavigationController.didReceiveNotification(notification:)),
+                                               name: NSNotification.Name(rawValue: ProgressNotificationDetails.kProgressUpdateNotification), object: nil)
     }
 
     var progressView: UIProgressView? {

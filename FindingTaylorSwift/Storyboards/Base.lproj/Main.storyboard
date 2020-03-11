@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nug-HF-yvl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="573.60000000000002" y="429.53523238380814"/>
+            <point key="canvasLocation" x="1135.2" y="472.71364317841085"/>
         </scene>
         <!--help-->
         <scene sceneID="mM1-U8-fW4">
@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jqa-zu-Skd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1200.8" y="53.523238380809602"/>
+            <point key="canvasLocation" x="1884" y="62.518740629685162"/>
         </scene>
         <!--Find View Controller-->
         <scene sceneID="aTN-sP-kUe">
@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PB8-jB-CWb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1172.4637681159422" y="-595.3125"/>
+            <point key="canvasLocation" x="884" y="-746"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="FjA-TE-x6g">
@@ -97,11 +97,12 @@
                         <segue destination="4Me-FC-ZYW" kind="relationship" relationship="viewControllers" id="A9f-mK-FdY"/>
                         <segue destination="pEP-m8-928" kind="relationship" relationship="viewControllers" id="PFX-d9-SO5"/>
                         <segue destination="Umx-5G-gxc" kind="relationship" relationship="viewControllers" id="4ow-WF-ryX"/>
+                        <segue destination="lHv-Ty-vPh" kind="relationship" relationship="viewControllers" id="C9J-L0-KC4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RfT-fC-xNP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-656" y="-270"/>
+            <point key="canvasLocation" x="-873" y="-393"/>
         </scene>
         <!--find-->
         <scene sceneID="eZ9-dV-jvz">
@@ -120,7 +121,23 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RMf-aQ-F8u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="262.31884057971018" y="-595.3125"/>
+            <point key="canvasLocation" x="14" y="-746"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="dny-Lg-U4h">
+            <objects>
+                <viewController id="N9f-kp-jGV" customClass="LoginViewController" customModule="FindingTaylorSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2a4-16-D1i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.6705882353" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="dWy-MN-ZQZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KNd-an-hKC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oWq-W4-qpV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-644" y="472.71364317841085"/>
         </scene>
         <!--Swifties-->
         <scene sceneID="oZM-HA-6I7">
@@ -139,13 +156,33 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hc0-aE-qNQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-218" y="493"/>
+            <point key="canvasLocation" x="327.19999999999999" y="472.71364317841085"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="AP4-OM-ASR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lHv-Ty-vPh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Login" image="person.circle" catalog="system" landscapeImage="person.circle" largeContentSizeImage="person.circle" id="L0V-kF-EdQ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wra-8r-nzU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="N9f-kp-jGV" kind="relationship" relationship="rootViewController" id="R9v-aw-9YA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J2r-Fz-6Hi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1583.2" y="472.71364317841085"/>
         </scene>
     </scenes>
     <resources>
         <image name="camera.on.rectangle" catalog="system" width="64" height="48"/>
         <image name="info.circle" catalog="system" width="64" height="60"/>
         <image name="magnifyingglass.circle" catalog="system" width="64" height="60"/>
+        <image name="person.circle" catalog="system" width="64" height="60"/>
         <image name="photo.on.rectangle" catalog="system" width="64" height="48"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>

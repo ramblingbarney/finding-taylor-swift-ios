@@ -10,6 +10,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,9 +19,10 @@ class LoginViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = attributes
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1)
-        self.navigationItem.title = "FINDING TAYLOR SWIFT"
+        self.navigationItem.title = "LOGIN / SIGNUP"
+        self.navigationItem.leftBarButtonItem?.tintColor = .white
+        navigationItem.leftBarButtonItem?.isEnabled = false
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
 
     }
-
-
 }

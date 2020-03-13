@@ -36,3 +36,7 @@ enum RandomLetters {
 enum SeenHelpInformation {
     static let seenHelp = "seenHelpInformation"
 }
+
+enum TextCellIdentifier {
+    static let textCellIdentifier = "programmaticSwiftUI"
+}

@@ -12,6 +12,8 @@ class LoginViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBOutlet var tableView: UITableView!
 
+    var providerButtons = OAuthListViewModel(providers: OAuthProviders.providers)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,7 +41,7 @@ extension LoginViewController {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return OAuthModel.loginButtons.count
+        return providerButtons.providerList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,14 +49,14 @@ extension LoginViewController {
 
         let row = indexPath.row
         cell.backgroundColor = #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1)
-        cell.buttonLabel.text = OAuthModel.loginButtons[row]
+        cell.buttonLabel.text = providerButtons.providerList[row]
         cell.layoutMargins = UIEdgeInsets.zero
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        print(OAuthModel.loginButtons[indexPath.row])
+        print(providerButtons.providerList[indexPath.row])
     }
 }
 

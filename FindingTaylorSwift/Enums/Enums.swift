@@ -40,3 +40,7 @@ enum SeenHelpInformation {
 enum TextCellIdentifier {
     static let textCellIdentifier = "programmaticSwiftUI"
 }
+
+enum OAuthProviders {
+    static let providers = ["FaceBook", "Google", "Instagram", "Qzone QQ", "Weibo", "Twitter", "Reddit", "Pinterest", "Ask.fm", "Tumblr", "Flickr", "Linkedin", "VK", "Odnoklassniki", "Meetup"]
+}

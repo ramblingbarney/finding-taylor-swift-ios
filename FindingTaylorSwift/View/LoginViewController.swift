@@ -25,11 +25,10 @@ class LoginViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.navigationItem.leftBarButtonItem?.tintColor = .white
         self.navigationItem.leftBarButtonItem?.isEnabled = false
         self.tableView.separatorColor = .white
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(CustomCell.self, forCellReuseIdentifier: TextCellIdentifier.textCellIdentifier)
-        self.tableView.layoutMargins = UIEdgeInsets.zero
-        self.tableView.separatorInset = UIEdgeInsets.zero
         self.tableView.tableFooterView = UIView()
     }
 }
@@ -69,14 +68,27 @@ class CustomCell: UITableViewCell {
         return label
     }()
 
+    var buttonSeparator: UIView = {
+        var separatorLine = UIView()
+        separatorLine.backgroundColor = .white
+        return separatorLine
+    }()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: TextCellIdentifier.textCellIdentifier)
+
         self.addSubview(buttonLabel)
         buttonLabel.translatesAutoresizingMaskIntoConstraints = false
-
         buttonLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         buttonLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         buttonLabel.textColor = UIColor.white
+
+        self.addSubview(buttonSeparator)
+        buttonSeparator.translatesAutoresizingMaskIntoConstraints = false
+        buttonSeparator.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0.0).isActive = true
+        buttonSeparator.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -0.0).isActive = true
+        buttonSeparator.topAnchor.constraint(equalTo: self.bottomAnchor, constant: -0.5).isActive = true
+        buttonSeparator.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0.0).isActive = true
     }
 
     override func layoutSubviews() {

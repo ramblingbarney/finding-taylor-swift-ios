@@ -1,4 +1,4 @@
-github "OAuthSwift/OAuthSwift" "2.1.0"
 github "TimOliver/TOCropViewController" "2.5.2"
 github "aws-amplify/aws-sdk-ios" "2.13.0"
 github "evgenyneu/keychain-swift" "18.0.0"
+github "openid/AppAuth-iOS" "217ee92c1c0139445de5ed643a260844976e3f06"

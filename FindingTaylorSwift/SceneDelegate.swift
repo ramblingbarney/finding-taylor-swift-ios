@@ -2,12 +2,10 @@
 //  SceneDelegate.swift
 //  FindingTaylorSwift
 //
-//  Created by The App Experts on 04/02/2020.
 //  Copyright © 2020 Conor O'Dwyer. All rights reserved.
 //
 
 import UIKit
-import OAuthSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -52,14 +50,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_ scene: UIScene) {
 
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
-    }
-
-    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-            guard let url = URLContexts.first?.url else {
-                return
-            }
-            if url.host == "oauth-callback" {
-                OAuthSwift.handle(url: url)
-            }
     }
 }

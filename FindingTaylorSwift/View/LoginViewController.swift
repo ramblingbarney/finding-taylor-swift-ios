@@ -2,17 +2,19 @@
 //  LoginViewController.swift
 //  FindingTaylorSwift
 //
-//  Created by The App Experts on 11/03/2020.
 //  Copyright © 2020 Conor O'Dwyer. All rights reserved.
 //
 
 import UIKit
+import AuthenticationServices
 
 class LoginViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var tableView: UITableView!
 
-    var providerButtons = OAuthListViewModel(providers: OAuthProviders.providers)
+    var oAuthViewModel = OAuthListViewModel(providers: OAuthProviders.providers)
+    var oAuthUrl: URL!
+    var webAuthSession: ASWebAuthenticationSession?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +42,7 @@ extension LoginViewController {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return providerButtons.providerList.count
+        return oAuthViewModel.providerList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,15 +50,56 @@ extension LoginViewController {
 
         let row = indexPath.row
         cell.backgroundColor = #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1)
-        cell.buttonLabel.text = providerButtons.providerList[row]
+        cell.buttonLabel.text = oAuthViewModel.providerList[row]
         cell.layoutMargins = UIEdgeInsets.zero
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        print(providerButtons.providerList[indexPath.row])
+        do {
+            oAuthUrl = try oAuthViewModel.createOAuthUrl(providerName: oAuthViewModel.providerList[indexPath.row])
+
+            getAuthTokenWithWebLogin(authURL: oAuthUrl)
+        } catch {
+            print("URL Request Failed")
+        }
+
+        tableView.deselectRow(at: indexPath, animated: true)
     }
+}
+
+extension LoginViewController: ASWebAuthenticationPresentationContextProviding {
+
+        func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
+            return self.view.window ?? ASPresentationAnchor()
+        }
+
+        @available(iOS 13.0, *)
+        func getAuthTokenWithWebLogin(authURL: URL ) {
+
+            let authURL = authURL
+            let callbackUrlScheme = "findingtaylorswift.linkedin"
+
+            self.webAuthSession = ASWebAuthenticationSession.init(url: authURL, callbackURLScheme: callbackUrlScheme, completionHandler: { (callBack: URL?, error: Error?) in
+
+                // handle auth response
+                guard error == nil, let successURL = callBack else {
+                    return
+                }
+
+                let oauthToken = NSURLComponents(string: (successURL.absoluteString))?.queryItems?.filter({$0.name == "code"}).first
+
+                // Do what you now that you've got the token, or use the callBack URL
+                print(oauthToken ?? "No OAuth Token")
+            })
+
+            // New in iOS 13
+            self.webAuthSession?.presentationContextProvider = self
+
+            // Kick it off
+            self.webAuthSession?.start()
+        }
 }
 
 class CustomCell: UITableViewCell {

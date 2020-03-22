@@ -2,7 +2,6 @@
 //  Enums.swift
 //  FindingTaylorSwift
 //
-//  Created by The App Experts on 05/02/2020.
 //  Copyright © 2020 Conor O'Dwyer. All rights reserved.
 //
 
@@ -43,4 +42,43 @@ enum TextCellIdentifier {
 
 enum OAuthProviders {
     static let providers = ["FaceBook", "Google", "Instagram", "Qzone QQ", "Weibo", "Twitter", "Reddit", "Pinterest", "Ask.fm", "Tumblr", "Flickr", "Linkedin", "VK", "Odnoklassniki", "Meetup"]
+}
+
+enum OAuthProviderNames: String {
+    case linkedin
+}
+
+enum OAuthPaths {
+    static let linkedinAuthorizeUrl = "/oauth/v2/authorization"
+    static let linkedinAccessTokenUrl = "/uas/oauth2/accessToken"
+}
+
+enum OAuthUrls {
+    static let linkedinAuthorizeUrl = "https://www.linkedin.com/oauth/v2/authorization"
+    static let linkedinAccessTokenUrl = "https://www.linkedin.com/oauth/v2/accessToken"
+}
+
+enum Linkedin {
+    static let scheme = "https"
+    static let host = "www.linkedin.com"
+}
+
+enum OAuthResponseType {
+    static let linkedin = "code"
+}
+
+enum OAuthRedirectURLS: String {
+    case linkedin = "https://findingtaylorswift.linkedin/oauth"
+}
+
+enum OAuthState {
+    static let linkedin = "linkedin"
+}
+
+enum OAuthScope {
+    static let linkedin = "r_liteprofile r_emailaddress"
+}
+
+enum OAuthError: Error {
+    case urlError(provider: String)
 }

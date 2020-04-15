@@ -30,7 +30,7 @@ class AWSFileHandler {
         AWSServiceManager.default().defaultServiceConfiguration = configuration
 
         let s3BucketName = bucketName
-        let data: Data = image.pngData()!
+        guard let data: Data = image.pngData() else { return }
         let remoteName = generateRandomStringWithLength(length: 12) + ".png"
         print("REMOTE NAME: ", remoteName)
 

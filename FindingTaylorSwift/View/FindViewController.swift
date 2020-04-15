@@ -175,7 +175,7 @@ extension FindViewController: ProgressErrorDelegate {
     internal func showErrorAlert(errorMessage: String) {
 
         let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "OK", style: .default) { action in
+        let OKAction = UIAlertAction(title: "OK", style: .default) { _ in
             print("Pressed OK")
         }
         alertController.addAction(OKAction)

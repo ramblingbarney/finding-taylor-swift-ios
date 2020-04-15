@@ -38,6 +38,7 @@ enum SeenHelpInformation {
 
 enum TextCellIdentifier {
     static let textCellIdentifier = "programmaticSwiftUI"
+    static let textCellIdentifierCustomCell = "programmaticSwiftUIOneFourSeven33"
 }
 
 enum OAuthProviders {

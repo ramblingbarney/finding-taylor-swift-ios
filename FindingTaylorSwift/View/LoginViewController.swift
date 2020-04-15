@@ -118,7 +118,7 @@ class CustomCell: UITableViewCell {
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: TextCellIdentifier.textCellIdentifier)
+        super.init(style: style, reuseIdentifier: TextCellIdentifier.textCellIdentifierCustomCell)
 
         self.addSubview(buttonLabel)
         buttonLabel.translatesAutoresizingMaskIntoConstraints = false

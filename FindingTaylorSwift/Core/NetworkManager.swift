@@ -25,7 +25,7 @@ class NetworkManager {
 
         let request = URLRequest(url: url)
 
-        let dataTask = session.dataTask(with: request) { (data, response, error) in
+        let dataTask = session.dataTask(with: request) { (data, _, error) in
             if let error = error {
                 print(error)
                 completion(nil)

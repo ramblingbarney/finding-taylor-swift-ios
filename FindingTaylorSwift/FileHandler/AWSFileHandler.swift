@@ -19,9 +19,9 @@ class AWSFileHandler {
     weak var delegate: ProgressErrorDelegate?
 
     init() {
-        keychain.set(valueForAPIKey(named: "ACCESS_KEY"), forKey: "ACCESS_KEY")
-        keychain.set(valueForAPIKey(named: "SECRET_KEY"), forKey: "SECRET_KEY")
-        credentials = AWSStaticCredentialsProvider(accessKey: keychain.get("ACCESS_KEY")!, secretKey: keychain.get("SECRET_KEY")!)
+        keychain.set(valueForAPIKey(key: "accessKey"), forKey: "accessKey")
+        keychain.set(valueForAPIKey(key: "secretKey"), forKey: "secretKey")
+        credentials = AWSStaticCredentialsProvider(accessKey: keychain.get("accessKey")!, secretKey: keychain.get("secretKey")!)
         configuration = AWSServiceConfiguration(region: AWSRegionType.EUWest2, credentialsProvider: credentials)
     }
 

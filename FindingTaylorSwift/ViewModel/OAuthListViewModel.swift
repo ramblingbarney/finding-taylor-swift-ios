@@ -30,7 +30,7 @@ class OAuthListViewModel {
             authorizationURL.path = OAuthPaths.linkedinAuthorizeUrl
             authorizationURL.queryItems = [
                 URLQueryItem(name: "response_type", value: OAuthResponseType.linkedin),
-                URLQueryItem(name: "client_id", value: valueForAPIKey(named: "LINKEDIN_ID")),
+                URLQueryItem(name: "client_id", value: valueForAPIKey(key: "linkedinId")),
                 URLQueryItem(name: "redirect_uri", value: redirectURL),
                 URLQueryItem(name: "state", value: state),
                 URLQueryItem(name: "scope", value: OAuthScope.linkedin)

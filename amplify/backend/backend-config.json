@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"findingtaylorswift9b74e95e": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}

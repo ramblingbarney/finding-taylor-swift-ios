@@ -38,6 +38,7 @@
 		034F14DD23EC12230003AF26 /* SwiftieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F14DC23EC12230003AF26 /* SwiftieViewController.swift */; };
 		036DF347243D2CBB00ED67CD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036DF346243D2CBB00ED67CD /* Extensions.swift */; };
 		036DF3502447829400ED67CD /* WhiteTshirtPinkBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 036DF34F2447829300ED67CD /* WhiteTshirtPinkBackground.png */; };
+		036DF38F244CE2B400ED67CD /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 036DF38E244CE2B300ED67CD /* awsconfiguration.json */; };
 		03B6EE3D241902AA00E7B6F1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6EE3C241902AA00E7B6F1 /* LoginViewController.swift */; };
 		03B6EE40241AA0E000E7B6F1 /* OAuthList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6EE3F241AA0E000E7B6F1 /* OAuthList.swift */; };
 		03B6EE43241D96DB00E7B6F1 /* OAuthListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6EE42241D96DB00E7B6F1 /* OAuthListViewModel.swift */; };
@@ -113,6 +114,7 @@
 		036DF346243D2CBB00ED67CD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		036DF34A2443BFE900ED67CD /* AppAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppAuth.framework; path = Carthage/Build/iOS/AppAuth.framework; sourceTree = "<group>"; };
 		036DF34F2447829300ED67CD /* WhiteTshirtPinkBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WhiteTshirtPinkBackground.png; path = FindingTaylorSwift/WhiteTshirtPinkBackground.png; sourceTree = "<group>"; };
+		036DF38E244CE2B300ED67CD /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		03B6EE372417F15000E7B6F1 /* OAuthSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthSwift.framework; path = Carthage/Build/iOS/OAuthSwift.framework; sourceTree = "<group>"; };
 		03B6EE3C241902AA00E7B6F1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		03B6EE3F241AA0E000E7B6F1 /* OAuthList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthList.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				034F148523E986890003AF26 /* Info.plist */,
 				034F147D23E986860003AF26 /* FindingTaylorSwift.xcdatamodeld */,
 				034F14D023EB86D80003AF26 /* ApiKeys.plist */,
+				036DF38E244CE2B300ED67CD /* awsconfiguration.json */,
 				034F14D223EB87100003AF26 /* ApiKeys.swift */,
 			);
 			path = FindingTaylorSwift;
@@ -413,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				034F148423E986890003AF26 /* LaunchScreen.storyboard in Resources */,
+				036DF38F244CE2B400ED67CD /* awsconfiguration.json in Resources */,
 				034F148123E986890003AF26 /* Assets.xcassets in Resources */,
 				034F147C23E986860003AF26 /* Main.storyboard in Resources */,
 				036DF3502447829400ED67CD /* WhiteTshirtPinkBackground.png in Resources */,

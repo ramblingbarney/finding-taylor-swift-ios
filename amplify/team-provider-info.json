@@ -1,0 +1,20 @@
+{
+    "ios": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-findingtaylorswift-ios-201346-authRole",
+            "UnauthRoleArn": "arn:aws:iam::409812921176:role/amplify-findingtaylorswift-ios-201346-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::409812921176:role/amplify-findingtaylorswift-ios-201346-authRole",
+            "Region": "eu-west-2",
+            "DeploymentBucketName": "amplify-findingtaylorswift-ios-201346-deployment",
+            "UnauthRoleName": "amplify-findingtaylorswift-ios-201346-unauthRole",
+            "StackName": "amplify-findingtaylorswift-ios-201346",
+            "StackId": "arn:aws:cloudformation:eu-west-2:409812921176:stack/amplify-findingtaylorswift-ios-201346/e56ef170-8271-11ea-9f96-02317fefc7aa",
+            "AmplifyAppId": "dunngw4n4qirk"
+        },
+        "categories": {
+            "auth": {
+                "findingtaylorswift9b74e95e": {}
+            }
+        }
+    }
+}

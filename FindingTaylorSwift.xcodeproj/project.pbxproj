@@ -36,6 +36,18 @@
 		034F14D623EB87DE0003AF26 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F14D523EB87DE0003AF26 /* Enums.swift */; };
 		034F14D923EB88520003AF26 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F14D823EB88520003AF26 /* UINavigationBar.swift */; };
 		034F14DD23EC12230003AF26 /* SwiftieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F14DC23EC12230003AF26 /* SwiftieViewController.swift */; };
+		03594462244E04C0003A7D73 /* AWSAuthUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036DF393244CF9A100ED67CD /* AWSAuthUI.framework */; };
+		03594463244E04C1003A7D73 /* AWSAuthUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 036DF393244CF9A100ED67CD /* AWSAuthUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		03594466244E091F003A7D73 /* AWSAuthCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03594465244E091F003A7D73 /* AWSAuthCore.framework */; };
+		03594467244E091F003A7D73 /* AWSAuthCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03594465244E091F003A7D73 /* AWSAuthCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		03594468244E0A51003A7D73 /* AWSMobileClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036DF390244CF97000ED67CD /* AWSMobileClient.framework */; };
+		03594469244E0A51003A7D73 /* AWSMobileClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 036DF390244CF97000ED67CD /* AWSMobileClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0359446B244E0AD4003A7D73 /* AWSCognitoIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0359446A244E0AD4003A7D73 /* AWSCognitoIdentityProvider.framework */; };
+		0359446C244E0AD4003A7D73 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0359446A244E0AD4003A7D73 /* AWSCognitoIdentityProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0359446E244E0B6E003A7D73 /* AWSCognitoIdentityProviderASF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0359446D244E0B6E003A7D73 /* AWSCognitoIdentityProviderASF.framework */; };
+		0359446F244E0B6E003A7D73 /* AWSCognitoIdentityProviderASF.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0359446D244E0B6E003A7D73 /* AWSCognitoIdentityProviderASF.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		03594470244E0BE1003A7D73 /* AWSUserPoolsSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036DF396244CFB6700ED67CD /* AWSUserPoolsSignIn.framework */; };
+		03594471244E0BE1003A7D73 /* AWSUserPoolsSignIn.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 036DF396244CFB6700ED67CD /* AWSUserPoolsSignIn.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		036DF347243D2CBB00ED67CD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036DF346243D2CBB00ED67CD /* Extensions.swift */; };
 		036DF3502447829400ED67CD /* WhiteTshirtPinkBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 036DF34F2447829300ED67CD /* WhiteTshirtPinkBackground.png */; };
 		036DF38F244CE2B400ED67CD /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 036DF38E244CE2B300ED67CD /* awsconfiguration.json */; };
@@ -69,7 +81,13 @@
 			dstSubfolderSpec = 10;
 			files = (
 				034F14C523EB2E230003AF26 /* KeychainSwift.framework in Embed Frameworks */,
+				03594463244E04C1003A7D73 /* AWSAuthUI.framework in Embed Frameworks */,
 				034F14BC23EB2D780003AF26 /* AWSS3.framework in Embed Frameworks */,
+				0359446C244E0AD4003A7D73 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */,
+				03594469244E0A51003A7D73 /* AWSMobileClient.framework in Embed Frameworks */,
+				03594471244E0BE1003A7D73 /* AWSUserPoolsSignIn.framework in Embed Frameworks */,
+				03594467244E091F003A7D73 /* AWSAuthCore.framework in Embed Frameworks */,
+				0359446F244E0B6E003A7D73 /* AWSCognitoIdentityProviderASF.framework in Embed Frameworks */,
 				034F14B823EB2D4A0003AF26 /* AWSCore.framework in Embed Frameworks */,
 				034F14C223EB2DF60003AF26 /* CropViewController.framework in Embed Frameworks */,
 			);
@@ -111,10 +129,16 @@
 		034F14D523EB87DE0003AF26 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		034F14D823EB88520003AF26 /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		034F14DC23EC12230003AF26 /* SwiftieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftieViewController.swift; sourceTree = "<group>"; };
+		03594465244E091F003A7D73 /* AWSAuthCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSAuthCore.framework; path = Carthage/Build/iOS/AWSAuthCore.framework; sourceTree = "<group>"; };
+		0359446A244E0AD4003A7D73 /* AWSCognitoIdentityProvider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognitoIdentityProvider.framework; path = Carthage/Build/iOS/AWSCognitoIdentityProvider.framework; sourceTree = "<group>"; };
+		0359446D244E0B6E003A7D73 /* AWSCognitoIdentityProviderASF.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognitoIdentityProviderASF.framework; path = Carthage/Build/iOS/AWSCognitoIdentityProviderASF.framework; sourceTree = "<group>"; };
 		036DF346243D2CBB00ED67CD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		036DF34A2443BFE900ED67CD /* AppAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppAuth.framework; path = Carthage/Build/iOS/AppAuth.framework; sourceTree = "<group>"; };
 		036DF34F2447829300ED67CD /* WhiteTshirtPinkBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WhiteTshirtPinkBackground.png; path = FindingTaylorSwift/WhiteTshirtPinkBackground.png; sourceTree = "<group>"; };
 		036DF38E244CE2B300ED67CD /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
+		036DF390244CF97000ED67CD /* AWSMobileClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSMobileClient.framework; path = Carthage/Build/iOS/AWSMobileClient.framework; sourceTree = "<group>"; };
+		036DF393244CF9A100ED67CD /* AWSAuthUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSAuthUI.framework; path = Carthage/Build/iOS/AWSAuthUI.framework; sourceTree = "<group>"; };
+		036DF396244CFB6700ED67CD /* AWSUserPoolsSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSUserPoolsSignIn.framework; path = Carthage/Build/iOS/AWSUserPoolsSignIn.framework; sourceTree = "<group>"; };
 		03B6EE372417F15000E7B6F1 /* OAuthSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthSwift.framework; path = Carthage/Build/iOS/OAuthSwift.framework; sourceTree = "<group>"; };
 		03B6EE3C241902AA00E7B6F1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		03B6EE3F241AA0E000E7B6F1 /* OAuthList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthList.swift; sourceTree = "<group>"; };
@@ -127,7 +151,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				034F14C423EB2E230003AF26 /* KeychainSwift.framework in Frameworks */,
+				03594462244E04C0003A7D73 /* AWSAuthUI.framework in Frameworks */,
 				034F14BB23EB2D780003AF26 /* AWSS3.framework in Frameworks */,
+				0359446B244E0AD4003A7D73 /* AWSCognitoIdentityProvider.framework in Frameworks */,
+				03594468244E0A51003A7D73 /* AWSMobileClient.framework in Frameworks */,
+				03594470244E0BE1003A7D73 /* AWSUserPoolsSignIn.framework in Frameworks */,
+				03594466244E091F003A7D73 /* AWSAuthCore.framework in Frameworks */,
+				0359446E244E0B6E003A7D73 /* AWSCognitoIdentityProviderASF.framework in Frameworks */,
 				034F14B723EB2D4A0003AF26 /* AWSCore.framework in Frameworks */,
 				034F14C123EB2DF60003AF26 /* CropViewController.framework in Frameworks */,
 			);
@@ -235,6 +265,12 @@
 		034F14B523EB2D4A0003AF26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0359446D244E0B6E003A7D73 /* AWSCognitoIdentityProviderASF.framework */,
+				0359446A244E0AD4003A7D73 /* AWSCognitoIdentityProvider.framework */,
+				03594465244E091F003A7D73 /* AWSAuthCore.framework */,
+				036DF396244CFB6700ED67CD /* AWSUserPoolsSignIn.framework */,
+				036DF393244CF9A100ED67CD /* AWSAuthUI.framework */,
+				036DF390244CF97000ED67CD /* AWSMobileClient.framework */,
 				036DF34A2443BFE900ED67CD /* AppAuth.framework */,
 				03B6EE372417F15000E7B6F1 /* OAuthSwift.framework */,
 				034F14C323EB2E230003AF26 /* KeychainSwift.framework */,
@@ -454,6 +490,12 @@
 				"$(SRCROOT)/Carthage/Build/iOS/AWSS3.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AWSCore.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/KeychainSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AWSAuthCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AWSAuthUI.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AWSMobileClient.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AWSCognitoIdentityProvider.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AWSCognitoIdentityProviderASF.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AWSUserPoolsSignIn.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -462,6 +504,12 @@
 				"$(DERIVED_FILE_DIR)/AWSS3.framework",
 				"$(DERIVED_FILE_DIR)/AWSCore.framework",
 				"$(DERIVED_FILE_DIR)/KeychainSwift.framework",
+				"$(DERIVED_FILE_DIR)/AWSAuthCore.framework",
+				"$(DERIVED_FILE_DIR)/AWSAuthUI.framework",
+				"$(DERIVED_FILE_DIR)/AWSMobileClient.framework",
+				"$(DERIVED_FILE_DIR)/AWSCognitoIdentityProvider.framework",
+				"$(DERIVED_FILE_DIR)/AWSCognitoIdentityProviderASF.framework",
+				"$(DERIVED_FILE_DIR)/AWSUserPoolsSignIn.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -51,7 +51,7 @@
 		036DF347243D2CBB00ED67CD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036DF346243D2CBB00ED67CD /* Extensions.swift */; };
 		036DF3502447829400ED67CD /* WhiteTshirtPinkBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 036DF34F2447829300ED67CD /* WhiteTshirtPinkBackground.png */; };
 		036DF38F244CE2B400ED67CD /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 036DF38E244CE2B300ED67CD /* awsconfiguration.json */; };
-		03B6EE3D241902AA00E7B6F1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6EE3C241902AA00E7B6F1 /* LoginViewController.swift */; };
+		03B6EE3D241902AA00E7B6F1 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6EE3C241902AA00E7B6F1 /* AccountViewController.swift */; };
 		03B6EE40241AA0E000E7B6F1 /* OAuthList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6EE3F241AA0E000E7B6F1 /* OAuthList.swift */; };
 		03B6EE43241D96DB00E7B6F1 /* OAuthListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6EE42241D96DB00E7B6F1 /* OAuthListViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -140,7 +140,7 @@
 		036DF393244CF9A100ED67CD /* AWSAuthUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSAuthUI.framework; path = Carthage/Build/iOS/AWSAuthUI.framework; sourceTree = "<group>"; };
 		036DF396244CFB6700ED67CD /* AWSUserPoolsSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSUserPoolsSignIn.framework; path = Carthage/Build/iOS/AWSUserPoolsSignIn.framework; sourceTree = "<group>"; };
 		03B6EE372417F15000E7B6F1 /* OAuthSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthSwift.framework; path = Carthage/Build/iOS/OAuthSwift.framework; sourceTree = "<group>"; };
-		03B6EE3C241902AA00E7B6F1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		03B6EE3C241902AA00E7B6F1 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		03B6EE3F241AA0E000E7B6F1 /* OAuthList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthList.swift; sourceTree = "<group>"; };
 		03B6EE42241D96DB00E7B6F1 /* OAuthListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -323,7 +323,7 @@
 				034F14AF23EAF6950003AF26 /* InformationViewController.swift */,
 				034F14AB23E9E17C0003AF26 /* FindViewController.swift */,
 				034F14DC23EC12230003AF26 /* SwiftieViewController.swift */,
-				03B6EE3C241902AA00E7B6F1 /* LoginViewController.swift */,
+				03B6EE3C241902AA00E7B6F1 /* AccountViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -552,7 +552,7 @@
 				034F147F23E986860003AF26 /* FindingTaylorSwift.xcdatamodeld in Sources */,
 				034F147723E986860003AF26 /* SceneDelegate.swift in Sources */,
 				034F14D923EB88520003AF26 /* UINavigationBar.swift in Sources */,
-				03B6EE3D241902AA00E7B6F1 /* LoginViewController.swift in Sources */,
+				03B6EE3D241902AA00E7B6F1 /* AccountViewController.swift in Sources */,
 				034F14C723EB74D70003AF26 /* RequestHandler.swift in Sources */,
 				03B6EE40241AA0E000E7B6F1 /* OAuthList.swift in Sources */,
 				034F14B023EAF6950003AF26 /* InformationViewController.swift in Sources */,

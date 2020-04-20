@@ -123,52 +123,21 @@
             </objects>
             <point key="canvasLocation" x="14" y="-746"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Account View Controller-->
         <scene sceneID="dny-Lg-U4h">
             <objects>
-                <viewController id="N9f-kp-jGV" customClass="LoginViewController" customModule="FindingTaylorSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="N9f-kp-jGV" customClass="AccountViewController" customModule="FindingTaylorSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2a4-16-D1i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T2k-fP-q2u">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
-                                <color key="backgroundColor" red="1" green="0.66666666669999997" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="programmaticSwiftUI" id="uNh-ck-uxy">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uNh-ck-uxy" id="alK-nr-SFC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" red="1" green="0.66666666669999997" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="0.6705882353" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="T2k-fP-q2u" firstAttribute="bottom" secondItem="dWy-MN-ZQZ" secondAttribute="bottom" id="POo-V0-CXx"/>
-                            <constraint firstItem="T2k-fP-q2u" firstAttribute="top" secondItem="dWy-MN-ZQZ" secondAttribute="top" id="cc3-FZ-8US"/>
-                            <constraint firstItem="T2k-fP-q2u" firstAttribute="trailing" secondItem="dWy-MN-ZQZ" secondAttribute="trailing" id="exU-r1-EEy"/>
-                            <constraint firstItem="T2k-fP-q2u" firstAttribute="leading" secondItem="dWy-MN-ZQZ" secondAttribute="leading" id="xg9-I8-zwn"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dWy-MN-ZQZ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="KNd-an-hKC">
-                        <barButtonItem key="leftBarButtonItem" title="Account" image="person.circle" catalog="system" landscapeImage="person.circle" largeContentSizeImage="person.circle" id="leb-7U-N3x"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="T2k-fP-q2u" id="APp-fs-Km2"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="KNd-an-hKC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWq-W4-qpV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1046" y="1157"/>
+            <point key="canvasLocation" x="-988" y="1197"/>
         </scene>
         <!--Swifties-->
         <scene sceneID="oZM-HA-6I7">
@@ -189,11 +158,11 @@
             </objects>
             <point key="canvasLocation" x="470" y="339"/>
         </scene>
-        <!--Login-->
+        <!--My Account-->
         <scene sceneID="AP4-OM-ASR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lHv-Ty-vPh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Login" image="person.circle" catalog="system" landscapeImage="person.circle" largeContentSizeImage="person.circle" id="L0V-kF-EdQ"/>
+                    <tabBarItem key="tabBarItem" title="My Account" image="person.circle" catalog="system" landscapeImage="person.circle" largeContentSizeImage="person.circle" id="L0V-kF-EdQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wra-8r-nzU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AWSMobileClient
 import CoreData
 
 @UIApplicationMain
@@ -20,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             defaults.set(UUID, forKey: "ApplicationUniqueIdentifier")
             defaults.synchronize()
         }
-        return true
+//        return true
+        return AWSMobileClient.default().interceptApplication(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
     // MARK: UISceneSession Lifecycle
@@ -29,6 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+    }
+
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+
+        return AWSMobileClient.default().interceptApplication(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
 
     // MARK: - Core Data stack

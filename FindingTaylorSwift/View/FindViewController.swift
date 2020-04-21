@@ -117,7 +117,10 @@ class FindViewController: UIViewController, CropViewControllerDelegate, UIImageP
 
     @objc public func didTapImageView() {
         // When tapping the image view, restore the image to the previous cropping state
-        let cropViewController = CropViewController(croppingStyle: self.croppingStyle, image: self.image!)
+        
+        guard let image = self.image else { return }
+        
+        let cropViewController = CropViewController(croppingStyle: self.croppingStyle, image: image)
         cropViewController.delegate = self
         let viewFrame = view.convert(imageView.frame, to: navigationController!.view)
 

@@ -10,6 +10,8 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    let defaults = UserDefaults.standard
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let attributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17)]
@@ -29,5 +31,8 @@ class SignInViewController: UIViewController {
         print("cancelled....")
         self.navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
+
+        // Set the Cancel screen Switch
+        self.defaults.set(true, forKey: "cancelledSignInAWS")
     }
 }

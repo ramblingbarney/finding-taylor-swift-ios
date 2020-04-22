@@ -48,6 +48,7 @@
 		0359446F244E0B6E003A7D73 /* AWSCognitoIdentityProviderASF.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0359446D244E0B6E003A7D73 /* AWSCognitoIdentityProviderASF.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		03594470244E0BE1003A7D73 /* AWSUserPoolsSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036DF396244CFB6700ED67CD /* AWSUserPoolsSignIn.framework */; };
 		03594471244E0BE1003A7D73 /* AWSUserPoolsSignIn.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 036DF396244CFB6700ED67CD /* AWSUserPoolsSignIn.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		035944732450E7E7003A7D73 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035944722450E7E7003A7D73 /* SignInViewController.swift */; };
 		036DF347243D2CBB00ED67CD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036DF346243D2CBB00ED67CD /* Extensions.swift */; };
 		036DF3502447829400ED67CD /* WhiteTshirtPinkBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 036DF34F2447829300ED67CD /* WhiteTshirtPinkBackground.png */; };
 		036DF38F244CE2B400ED67CD /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 036DF38E244CE2B300ED67CD /* awsconfiguration.json */; };
@@ -132,6 +133,7 @@
 		03594465244E091F003A7D73 /* AWSAuthCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSAuthCore.framework; path = Carthage/Build/iOS/AWSAuthCore.framework; sourceTree = "<group>"; };
 		0359446A244E0AD4003A7D73 /* AWSCognitoIdentityProvider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognitoIdentityProvider.framework; path = Carthage/Build/iOS/AWSCognitoIdentityProvider.framework; sourceTree = "<group>"; };
 		0359446D244E0B6E003A7D73 /* AWSCognitoIdentityProviderASF.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognitoIdentityProviderASF.framework; path = Carthage/Build/iOS/AWSCognitoIdentityProviderASF.framework; sourceTree = "<group>"; };
+		035944722450E7E7003A7D73 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		036DF346243D2CBB00ED67CD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		036DF34A2443BFE900ED67CD /* AppAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppAuth.framework; path = Carthage/Build/iOS/AppAuth.framework; sourceTree = "<group>"; };
 		036DF34F2447829300ED67CD /* WhiteTshirtPinkBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WhiteTshirtPinkBackground.png; path = FindingTaylorSwift/WhiteTshirtPinkBackground.png; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				034F14AB23E9E17C0003AF26 /* FindViewController.swift */,
 				034F14DC23EC12230003AF26 /* SwiftieViewController.swift */,
 				03B6EE3C241902AA00E7B6F1 /* AccountViewController.swift */,
+				035944722450E7E7003A7D73 /* SignInViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				034F14CF23EB7A070003AF26 /* AWSFileHandler.swift in Sources */,
 				036DF347243D2CBB00ED67CD /* Extensions.swift in Sources */,
 				034F14D623EB87DE0003AF26 /* Enums.swift in Sources */,
+				035944732450E7E7003A7D73 /* SignInViewController.swift in Sources */,
 				034F147523E986860003AF26 /* AppDelegate.swift in Sources */,
 				034F147F23E986860003AF26 /* FindingTaylorSwift.xcdatamodeld in Sources */,
 				034F147723E986860003AF26 /* SceneDelegate.swift in Sources */,

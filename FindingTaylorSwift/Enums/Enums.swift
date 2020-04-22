@@ -83,3 +83,8 @@ enum OAuthScope {
 enum OAuthError: Error {
     case urlError(provider: String)
 }
+
+enum AWSControllers {
+    static let signIn = "awsSignInController"
+    static let forgotPassword = "awsForgotPasswordController"
+}

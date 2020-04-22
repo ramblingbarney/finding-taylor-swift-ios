@@ -14,35 +14,50 @@ class AccountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         let attributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17)]
         self.navigationController?.navigationBar.titleTextAttributes = attributes
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1)
         self.navigationItem.title = "My Account"
-        showSignIn()
+        //        showSignIn()
         initalizeAWSMobileClient()
     }
 
-    internal func showSignIn() {
+    private func showSignIn() {
 
-        AWSMobileClient.default().showSignIn(navigationController: self.navigationController!,
-                                             signInUIOptions: SignInUIOptions(
-                                                canCancel: true,
-                                                logoImage: UIImage(systemName: "person.circle"),
-                                                backgroundColor: #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1),
-                                                secondaryBackgroundColor: .white,
-                                                primaryColor: #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1),
-                                                disableSignUpButton: false)) { (_, error ) in
-                                                    if error == nil {
-                                                        DispatchQueue.main.async {
-                                                            print("User successfully logged in")
-                                                        }
-                                                    }
-        }
+        let awsSignInViewController = self.storyboard!.instantiateViewController(withIdentifier: AWSControllers.signIn)
+        self.navigationController!.pushViewController(awsSignInViewController, animated: true)
     }
+//        AWSMobileClient.default().signIn(username: "c9dw5er@protonmail.com", password: "test12345") { (signInResult, error) in
+//            if let error = error {
+//                print("\(error.localizedDescription)")
+//            } else if let signInResult = signInResult {
+//                switch signInResult.signInState {
+//                case .signedIn:
+//                    print("User is signed in.")
+//                case .smsMFA:
+//                    print("SMS message sent to \(signInResult.codeDetails!.destination!)")
+//                default:
+//                    print("Sign In needs info which is not yet supported.")
+//                }
+//            }
 
-    internal func initalizeAWSMobileClient() {
+        //        AWSMobileClient.default().showSignIn(navigationController: self.navigationController!,
+        //                                             signInUIOptions: SignInUIOptions(
+        //                                                canCancel: true,
+        //                                                logoImage: UIImage(systemName: "person.circle"),
+        //                                                backgroundColor: #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1),
+        //                                                secondaryBackgroundColor: .white,
+        //                                                primaryColor: #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1),
+        //                                                disableSignUpButton: false)) { (_, error ) in
+        //                                                    if error == nil {
+        //                                                        DispatchQueue.main.async {
+        //                                                            print("User successfully logged in")
+        //                                                        }
+        //                                                    }
+        //        }
+
+    private func initalizeAWSMobileClient() {
 
         AWSMobileClient.default().initialize { (userState, error ) in
 
@@ -51,6 +66,7 @@ class AccountViewController: UIViewController {
                 case .signedIn:
                     print("Logged In")
                     print("Cognito Identity Id (authenticated): \(String(describing: AWSMobileClient.default().identityId))")
+                    AWSMobileClient.default().signOut()
                 case .signedOut:
                     print("Logged Out")
                     DispatchQueue.main.async {

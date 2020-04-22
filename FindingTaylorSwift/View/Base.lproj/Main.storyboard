@@ -139,6 +139,21 @@
             </objects>
             <point key="canvasLocation" x="-988" y="1197"/>
         </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="g79-n4-wvV">
+            <objects>
+                <viewController storyboardIdentifier="awsSignInController" id="x7I-2Y-kGx" customClass="SignInViewController" customModule="FindingTaylorSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MPf-MH-23d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="DEY-li-9RB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="98E-33-Cu8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-260" y="1199"/>
+        </scene>
         <!--Swifties-->
         <scene sceneID="oZM-HA-6I7">
             <objects>

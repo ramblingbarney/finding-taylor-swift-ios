@@ -26,13 +26,20 @@ class AccountViewController: UIViewController {
 
     internal func showSignIn() {
 
-        AWSMobileClient.default().showSignIn(navigationController: self.navigationController!, { (_, error ) in
-            if error == nil {
-                DispatchQueue.main.async {
-                    print("User successfully logged in")
-                }
-            }
-        })
+        AWSMobileClient.default().showSignIn(navigationController: self.navigationController!,
+                                             signInUIOptions: SignInUIOptions(
+                                                canCancel: true,
+                                                logoImage: UIImage(systemName: "person.circle"),
+                                                backgroundColor: #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1),
+                                                secondaryBackgroundColor: .white,
+                                                primaryColor: #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1),
+                                                disableSignUpButton: false)) { (_, error ) in
+                                                    if error == nil {
+                                                        DispatchQueue.main.async {
+                                                            print("User successfully logged in")
+                                                        }
+                                                    }
+        }
     }
 
     internal func initalizeAWSMobileClient() {

@@ -10,6 +10,12 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet var userName: UITextField!
+    @IBOutlet var password: UITextField!
+    @IBOutlet var signInButton: UIButton!
+    @IBOutlet var createNewAccount: UIButton!
+    @IBOutlet var forgotYourPassword: UIButton!
+
     let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
@@ -20,10 +26,25 @@ class SignInViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1)
         self.navigationItem.title = "Sign In"
 
+        view.backgroundColor = #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1)
         let cancelItem = UIBarButtonItem(
             title: "Cancel", style: .done, target: self, action: #selector(cancelSignIn))
         self.navigationItem.leftBarButtonItem = cancelItem
         cancelItem.tintColor = .white
+    }
+
+    @IBAction func signIn(_ sender: UIButton) {
+
+        print("signing in")
+    }
+
+    @IBAction func createNewAccount(_ sender: UIButton) {
+
+        print("create new account")
+    }
+
+    @IBAction func forgotYourPassword(_ sender: UIButton) {
+        print("forgot your password")
     }
 
     @objc private func cancelSignIn(_ sender: AnyObject) {

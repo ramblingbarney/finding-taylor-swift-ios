@@ -10,6 +10,14 @@ import UIKit
 
 extension String: Error {}
 
+extension String {
+
+    var isBlank: Bool {
+        let trimmed = self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        return trimmed.isEmpty
+    }
+}
+
 extension UIImage {
     func resizeImage(_ dimension: CGFloat, opaque: Bool, contentMode: UIView.ContentMode = .scaleAspectFit) -> UIImage {
         var width: CGFloat

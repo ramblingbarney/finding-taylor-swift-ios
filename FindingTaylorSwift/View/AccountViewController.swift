@@ -12,18 +12,20 @@ import AWSMobileClient
 
 class AccountViewController: UIViewController {
 
+//    @IBOutlet var signOutButton: UIBarButtonItem!
     let defaults = UserDefaults.standard
+//    var awsUserPool: AWSUserPool!
 
-    override func viewWillAppear(_ animated: Bool) {
-
-        let seenSignIn = defaults.bool(forKey: "cancelledSignInAWS")
-
-        if seenSignIn {
-
-            self.tabBarController?.selectedIndex = 0
-            self.defaults.set(false, forKey: "cancelledSignInAWS")
-        }
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//
+//        let seenSignIn = defaults.bool(forKey: "cancelledSignInAWS")
+//
+//        if seenSignIn {
+//
+//            self.tabBarController?.selectedIndex = 0
+//            self.defaults.set(false, forKey: "cancelledSignInAWS")
+//        }
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,75 +34,38 @@ class AccountViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1)
         self.navigationItem.title = "My Account"
-        //        showSignIn()
-        initalizeAWSMobileClient()
+//        self.awsUserPool = AWSUserPool()
+//        isUserAuthenticated()
     }
+
+//    private func isUserAuthenticated() {
+//
+//        guard let currentAuthenticationStatus = self.awsUserPool.userAuthenticationStatus else {
+//
+//            // show an alert box "backend failure world ended try again later"
+//            return
+//        }
+//
+//        if currentAuthenticationStatus != .signedIn {
+//
+//            DispatchQueue.main.async {
+//                self.showSignIn()
+//            }
+//        }
+//    }
 
     private func showSignIn() {
-
-        let awsSignInViewController = self.storyboard!.instantiateViewController(withIdentifier: AWSControllers.signIn)
-        self.navigationController!.pushViewController(awsSignInViewController, animated: true)
+//        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//          if let destination = segue.destination as? SignInViewController {
+//            destination.awsUserPool = awsUserPool
+//          }
+//        }
+//        let awsSignInViewController = self.storyboard!.instantiateViewController(withIdentifier: AWSControllers.signIn)
+//        self.navigationController!.pushViewController(awsSignInViewController, animated: true)
     }
-    //        AWSMobileClient.default().signIn(username: "c9dw5er@protonmail.com", password: "test12345") { (signInResult, error) in
-    //            if let error = error {
-    //                print("\(error.localizedDescription)")
-    //            } else if let signInResult = signInResult {
-    //                switch signInResult.signInState {
-    //                case .signedIn:
-    //                    print("User is signed in.")
-    //                case .smsMFA:
-    //                    print("SMS message sent to \(signInResult.codeDetails!.destination!)")
-    //                default:
-    //                    print("Sign In needs info which is not yet supported.")
-    //                }
-    //            }
 
-    //        AWSMobileClient.default().showSignIn(navigationController: self.navigationController!,
-    //                                             signInUIOptions: SignInUIOptions(
-    //                                                canCancel: true,
-    //                                                logoImage: UIImage(systemName: "person.circle"),
-    //                                                backgroundColor: #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1),
-    //                                                secondaryBackgroundColor: .white,
-    //                                                primaryColor: #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1),
-    //                                                disableSignUpButton: false)) { (_, error ) in
-    //                                                    if error == nil {
-    //                                                        DispatchQueue.main.async {
-    //                                                            print("User successfully logged in")
-    //                                                        }
-    //                                                    }
-    //        }
+//    @IBAction func signOut(_ sender: UIBarButtonItem) {
 
-    private func initalizeAWSMobileClient() {
-
-        AWSMobileClient.default().initialize { (userState, error ) in
-
-            if let userState = userState {
-                switch userState {
-                case .signedIn:
-                    print("Logged In")
-                    print("Cognito Identity Id (authenticated): \(String(describing: AWSMobileClient.default().identityId))")
-                    AWSMobileClient.default().signOut()
-                case .signedOut:
-                    print("Logged Out")
-                    DispatchQueue.main.async {
-                        self.showSignIn()
-                    }
-                case .signedOutUserPoolsTokenInvalid:
-                    print("User Pools refresh token is invalid or expired.")
-                    DispatchQueue.main.async {
-                        self.showSignIn()
-                    }
-                case .signedOutFederatedTokensInvalid:
-                    print("Federated refresh token is invalid or expired.")
-                    DispatchQueue.main.async {
-                        self.showSignIn()
-                    }
-                default:
-                    AWSMobileClient.default().signOut()
-                }
-            } else if let error = error {
-                print(error.localizedDescription)
-            }
-        }
-    }
+//        awsUserPool.userLogout()
+//    }
 }

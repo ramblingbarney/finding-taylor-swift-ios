@@ -134,6 +134,7 @@
                         <viewLayoutGuide key="safeArea" id="dWy-MN-ZQZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="KNd-an-hKC">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="3NR-0i-xSp"/>
                         <barButtonItem key="leftBarButtonItem" title="Account Logout" image="WhiteDoorIcon" landscapeImage="WhiteDoorIcon" largeContentSizeImage="WhiteDoorIcon" id="Oer-c7-9yX">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -159,7 +160,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yrl-L4-BaU">
-                                <rect key="frame" x="78.5" y="312" width="218" height="34"/>
+                                <rect key="frame" x="78.5" y="192" width="218" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -170,10 +171,10 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteShirtDoorIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Ors-7z-CT6">
-                                <rect key="frame" x="137.5" y="64" width="100" height="240"/>
+                                <rect key="frame" x="137.5" y="64" width="100" height="120"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4vF-te-sHM">
-                                <rect key="frame" x="79" y="388" width="217" height="32"/>
+                                <rect key="frame" x="79" y="268" width="217" height="32"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
@@ -191,7 +192,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tyj-jj-QFU">
-                                <rect key="frame" x="78.5" y="346" width="218" height="34"/>
+                                <rect key="frame" x="78.5" y="226" width="218" height="34"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -201,7 +202,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RF8-vN-2gH">
-                                <rect key="frame" x="201" y="428" width="114" height="25"/>
+                                <rect key="frame" x="201" y="308" width="114" height="25"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Forgot your password?">
@@ -217,7 +218,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hef-qJ-eJW">
-                                <rect key="frame" x="63" y="428" width="108" height="26"/>
+                                <rect key="frame" x="63" y="308" width="108" height="26"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Create new account">

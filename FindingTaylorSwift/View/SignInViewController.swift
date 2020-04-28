@@ -15,7 +15,7 @@ class SignInViewController: UIViewController {
     @IBOutlet var createNewAccount: UIButton!
     @IBOutlet var forgotYourPassword: UIButton!
 
-    var awsUserPool: String!
+    var awsUserPool: AWSUserPool!
 
     let defaults = UserDefaults.standard
     override func viewDidLoad() {

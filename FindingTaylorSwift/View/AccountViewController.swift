@@ -59,7 +59,7 @@ class AccountViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "awsSignInController" {
             if let nextViewController = segue.destination as? SignInViewController {
-                nextViewController.awsUserPool = "XYZ"
+                nextViewController.awsUserPool = awsUserPool
             }
         }
     }

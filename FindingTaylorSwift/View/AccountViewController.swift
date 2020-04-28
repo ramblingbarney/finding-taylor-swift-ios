@@ -85,5 +85,6 @@ class AccountViewController: UIViewController {
 
     @IBAction func signOutUser(_ sender: UIBarButtonItem) {
         //awsUserPool.userLogout()
+        print("sign out sign out sign out")
     }
 }

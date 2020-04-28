@@ -12,6 +12,7 @@ import AWSMobileClient
 
 class AccountViewController: UIViewController {
 
+    @IBOutlet var signOut: UIBarButtonItem!
     let defaults = UserDefaults.standard
 
     override func viewWillAppear(_ animated: Bool) {
@@ -80,5 +81,9 @@ class AccountViewController: UIViewController {
                     nextViewController.awsUserPool = "XYZ"
             }
         }
+    }
+
+    @IBAction func signOutUser(_ sender: UIBarButtonItem) {
+        //awsUserPool.userLogout()
     }
 }

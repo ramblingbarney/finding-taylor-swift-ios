@@ -88,3 +88,10 @@ enum AWSControllers {
     static let signIn = "awsSignInController"
     static let forgotPassword = "awsForgotPasswordController"
 }
+
+enum UserAuthenticationState {
+    case signedIn
+    case signedOut
+    case signedOutUserPoolsTokenInvalid
+    case signedOutFederatedTokensInvalid
+}

@@ -2,7 +2,6 @@
 //  SignInViewController.swift
 //  FindingTaylorSwift
 //
-//  Created by The App Experts on 22/04/2020.
 //  Copyright © 2020 Conor O'Dwyer. All rights reserved.
 //
 

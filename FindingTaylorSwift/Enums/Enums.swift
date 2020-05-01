@@ -98,6 +98,15 @@ enum UserAuthenticationState {
 }
 
 enum LoginError {
-    static let title = "Error"
-    static let message = "Login Failed"
+    static let title = "Login Error"
+    static let message = "Email or password incorrect"
 }
+
+enum EmailValidationError {
+    static let title = "Email"
+    static let message = "Failed Validation"
+}
+
+enum PasswordValidationError {
+    static let title = "Password"
+    static let message = "Failed Validation: Blank"}

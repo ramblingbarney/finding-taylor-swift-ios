@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class SignInViewController: UIViewController {
 
@@ -36,11 +37,15 @@ class SignInViewController: UIViewController {
         if !userNameString.validateEmail {
             userName.layer.borderWidth = 2
             userName.layer.borderColor = UIColor.blue.cgColor
+            showAlert(title: EmailValidationError.title, message: EmailValidationError.message)
+            return
         }
 
         if passwordString.isBlank {
             password.layer.borderWidth = 2
             password.layer.borderColor = UIColor.blue.cgColor
+            showAlert(title: PasswordValidationError.title, message: PasswordValidationError.message)
+            return
         }
 
         if userNameString.validateEmail && !passwordString.isBlank {
@@ -48,6 +53,12 @@ class SignInViewController: UIViewController {
             awsUserPool.userLogin(userName: userNameString, password: passwordString)
             userName.text = ""
             password.text = ""
+            userName.layer.borderWidth = 0
+            password.layer.borderWidth = 0
+        }
+
+        if awsUserPool.userAuthenticationStatus != .signedIn {
+            showAlert(title: LoginError.title, message: LoginError.message)
         }
     }
 
@@ -81,5 +92,4 @@ class SignInViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
-
 }

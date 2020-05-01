@@ -14,7 +14,6 @@ import UIKit
 class AWSUserPool {
 
     var userAuthenticationStatus: UserAuthenticationState?
-    var userAuthenticationError: String?
 
     internal init() {
 
@@ -56,9 +55,7 @@ class AWSUserPool {
 
         AWSMobileClient.default().signIn(username: userName, password: password) { (signInResult, error) in
             if let error = error {
-                print("\(error.localizedDescription)")
-                self.userAuthenticationError = error.localizedDescription
-
+                print(error)
             } else if let signInResult = signInResult {
                 switch signInResult.signInState {
                 case .signedIn:

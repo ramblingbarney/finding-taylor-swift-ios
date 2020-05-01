@@ -1,4 +1,4 @@
 github "TimOliver/TOCropViewController"
 github "aws-amplify/aws-sdk-ios"
 github "evgenyneu/keychain-swift" ~> 18.0
-#github "awslabs/aws-mobile-appsync-sdk-ios"
+github "awslabs/aws-mobile-appsync-sdk-ios"

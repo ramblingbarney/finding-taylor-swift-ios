@@ -33,7 +33,7 @@ class SignInViewController: UIViewController {
         guard let userNameString = userName.text else { return }
         guard let passwordString = password.text else { return }
 
-        if userNameString.isBlank {
+        if !userNameString.validateEmail {
             userName.layer.borderWidth = 2
             userName.layer.borderColor = UIColor.blue.cgColor
         }
@@ -43,9 +43,11 @@ class SignInViewController: UIViewController {
             password.layer.borderColor = UIColor.blue.cgColor
         }
 
-        if !userNameString.isBlank && !passwordString.isBlank {
+        if userNameString.validateEmail && !passwordString.isBlank {
 
             awsUserPool.userLogin(userName: userNameString, password: passwordString)
+            userName.text = ""
+            password.text = ""
         }
     }
 
@@ -67,4 +69,17 @@ class SignInViewController: UIViewController {
         // Set the Cancel screen Switch
         self.defaults.set(true, forKey: "cancelledSignInAWS")
     }
+
+    private func showAlert(title: String, message: String) {
+
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "OK", style: .default) { _ in
+
+            }
+            alertController.addAction(OKAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+
 }

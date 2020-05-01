@@ -94,4 +94,10 @@ enum UserAuthenticationState {
     case signedOut
     case signedOutUserPoolsTokenInvalid
     case signedOutFederatedTokensInvalid
+    case authenticationError
+}
+
+enum LoginError {
+    static let title = "Error"
+    static let message = "Login Failed"
 }

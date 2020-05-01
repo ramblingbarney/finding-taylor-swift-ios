@@ -9,10 +9,12 @@ import Foundation
 import AWSAuthCore
 import AWSAuthUI
 import AWSMobileClient
+import UIKit
 
 class AWSUserPool {
 
     var userAuthenticationStatus: UserAuthenticationState?
+    var userAuthenticationError: String?
 
     internal init() {
 
@@ -55,10 +57,13 @@ class AWSUserPool {
         AWSMobileClient.default().signIn(username: userName, password: password) { (signInResult, error) in
             if let error = error {
                 print("\(error.localizedDescription)")
+                self.userAuthenticationError = error.localizedDescription
+
             } else if let signInResult = signInResult {
                 switch signInResult.signInState {
                 case .signedIn:
                     print("User is signed in.")
+                    self.userAuthenticationStatus = .signedIn
                 case .smsMFA:
                     print("SMS message sent to \(signInResult.codeDetails!.destination!)")
                 default:

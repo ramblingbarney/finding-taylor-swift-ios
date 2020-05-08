@@ -22,6 +22,7 @@ class AccountViewController: UIViewController {
             self.tabBarController?.selectedIndex = 0
             self.defaults.set(false, forKey: "cancelledSignInAWS")
         }
+        isUserAuthenticated()
     }
 
     override func viewDidLoad() {
@@ -32,7 +33,6 @@ class AccountViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1)
         self.navigationItem.title = "My Account"
         self.awsUserPool = AWSUserPool.shared
-        isUserAuthenticated()
     }
 
     private func isUserAuthenticated() {

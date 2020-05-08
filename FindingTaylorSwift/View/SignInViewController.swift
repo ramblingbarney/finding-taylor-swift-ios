@@ -29,6 +29,15 @@ class SignInViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1)
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if self.isMovingFromParent && awsUserPool.userAuthenticationStatus != .signedIn {
+
+            self.defaults.set(true, forKey: "cancelledSignInAWS")
+        }
+    }
+
     @IBAction func signIn(_ sender: UIButton) {
 
         guard let userNameString = userName.text else { return }
@@ -69,16 +78,6 @@ class SignInViewController: UIViewController {
 
     @IBAction func forgotYourPassword(_ sender: UIButton) {
         print("forgot your password")
-    }
-
-    @objc private func cancelSignIn(_ sender: AnyObject) {
-
-        print("cancelled....")
-        self.navigationController?.popViewController(animated: true)
-        dismiss(animated: true, completion: nil)
-
-        // Set the Cancel screen Switch
-        self.defaults.set(true, forKey: "cancelledSignInAWS")
     }
 
     private func showAlert(title: String, message: String) {

@@ -50,8 +50,6 @@
 		03594471244E0BE1003A7D73 /* AWSUserPoolsSignIn.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 036DF396244CFB6700ED67CD /* AWSUserPoolsSignIn.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		035944732450E7E7003A7D73 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035944722450E7E7003A7D73 /* SignInViewController.swift */; };
 		0359447A245799B4003A7D73 /* AWSUserPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03594479245799B4003A7D73 /* AWSUserPool.swift */; };
-		035AC73F2464B58E00A6EE1C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035AC73E2464B58D00A6EE1C /* RxSwift.framework */; };
-		035AC7402464B58E00A6EE1C /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 035AC73E2464B58D00A6EE1C /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		036DF347243D2CBB00ED67CD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036DF346243D2CBB00ED67CD /* Extensions.swift */; };
 		036DF3502447829400ED67CD /* WhiteTshirtPinkBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 036DF34F2447829300ED67CD /* WhiteTshirtPinkBackground.png */; };
 		036DF38F244CE2B400ED67CD /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 036DF38E244CE2B300ED67CD /* awsconfiguration.json */; };
@@ -90,7 +88,6 @@
 				0359446C244E0AD4003A7D73 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */,
 				03594469244E0A51003A7D73 /* AWSMobileClient.framework in Embed Frameworks */,
 				03594471244E0BE1003A7D73 /* AWSUserPoolsSignIn.framework in Embed Frameworks */,
-				035AC7402464B58E00A6EE1C /* RxSwift.framework in Embed Frameworks */,
 				03594467244E091F003A7D73 /* AWSAuthCore.framework in Embed Frameworks */,
 				0359446F244E0B6E003A7D73 /* AWSCognitoIdentityProviderASF.framework in Embed Frameworks */,
 				034F14B823EB2D4A0003AF26 /* AWSCore.framework in Embed Frameworks */,
@@ -164,7 +161,6 @@
 				0359446B244E0AD4003A7D73 /* AWSCognitoIdentityProvider.framework in Frameworks */,
 				03594468244E0A51003A7D73 /* AWSMobileClient.framework in Frameworks */,
 				03594470244E0BE1003A7D73 /* AWSUserPoolsSignIn.framework in Frameworks */,
-				035AC73F2464B58E00A6EE1C /* RxSwift.framework in Frameworks */,
 				03594466244E091F003A7D73 /* AWSAuthCore.framework in Frameworks */,
 				0359446E244E0B6E003A7D73 /* AWSCognitoIdentityProviderASF.framework in Frameworks */,
 				034F14B723EB2D4A0003AF26 /* AWSCore.framework in Frameworks */,
@@ -516,7 +512,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/AWSCognitoIdentityProvider.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AWSCognitoIdentityProviderASF.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AWSUserPoolsSignIn.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -531,7 +526,6 @@
 				"$(DERIVED_FILE_DIR)/AWSCognitoIdentityProvider.framework",
 				"$(DERIVED_FILE_DIR)/AWSCognitoIdentityProviderASF.framework",
 				"$(DERIVED_FILE_DIR)/AWSUserPoolsSignIn.framework",
-				"$(DERIVED_FILE_DIR)/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

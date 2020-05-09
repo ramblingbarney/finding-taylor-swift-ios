@@ -38,8 +38,7 @@ class AccountViewController: UIViewController {
     private func isUserAuthenticated() {
 
         guard let currentAuthenticationStatus = self.awsUserPool.userAuthenticationStatus else {
-
-            // show an alert box "backend failure world ended try again later"
+            showAlert(title: AWSUserAuthenticationNil.title, message: AWSUserAuthenticationNil.message)
             return
         }
 
@@ -66,5 +65,17 @@ class AccountViewController: UIViewController {
 
     @IBAction func signOutUser(_ sender: UIBarButtonItem) {
         awsUserPool.userLogout()
+    }
+    
+    private func showAlert(title: String, message: String) {
+
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "OK", style: .default) { _ in
+
+            }
+            alertController.addAction(OKAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 }

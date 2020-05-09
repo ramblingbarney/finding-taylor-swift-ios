@@ -102,6 +102,11 @@ enum LoginError {
     static let message = "Email or password incorrect"
 }
 
+enum AWSUserAuthenticationNil {
+    static let title = "System Error"
+    static let message = "User Login Not Available"
+}
+
 enum EmailValidationError {
     static let title = "Email"
     static let message = "Failed Validation"

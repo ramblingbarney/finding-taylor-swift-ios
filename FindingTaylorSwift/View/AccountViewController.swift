@@ -66,7 +66,7 @@ class AccountViewController: UIViewController {
     @IBAction func signOutUser(_ sender: UIBarButtonItem) {
         awsUserPool.userLogout()
     }
-    
+
     private func showAlert(title: String, message: String) {
 
         DispatchQueue.main.async {

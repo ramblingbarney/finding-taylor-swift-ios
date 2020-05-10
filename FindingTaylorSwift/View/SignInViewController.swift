@@ -66,7 +66,20 @@ class SignInViewController: UIViewController {
         }
 
         if awsUserPool.userAuthenticationStatus != .signedIn {
-            showAlert(title: LoginError.title, message: LoginError.message)
+
+            _ = awsUserPool.userAuthenticationError?
+                .subscribe({ errorText in
+                    guard let elementContent = errorText.element?.localizedDescription else {return}
+
+                    switch elementContent {
+                    case "The operation couldn’t be completed. (AWSMobileClient.AWSMobileClientError error 23.)":
+                        self.showAlert(title: LoginError.userNotFound, message: "")
+                    case "The operation couldn’t be completed. (AWSMobileClient.AWSMobileClientError error 13.)":
+                        self.showAlert(title: LoginError.incorrectPassword, message: "")
+                    default:
+                        self.showAlert(title: LoginError.defaultLoginError, message: "")
+                    }
+                })
         }
     }
 

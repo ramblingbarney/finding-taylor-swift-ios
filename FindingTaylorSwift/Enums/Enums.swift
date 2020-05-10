@@ -98,8 +98,9 @@ enum UserAuthenticationState {
 }
 
 enum LoginError {
-    static let title = "Login Error"
-    static let message = "Email or password incorrect"
+    static let userNotFound = "Email does not exist."
+    static let incorrectPassword = "Password incorrect."
+    static let defaultLoginError = "Incorrect username or password."
 }
 
 enum AWSUserAuthenticationNil {

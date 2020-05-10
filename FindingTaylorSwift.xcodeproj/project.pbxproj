@@ -56,6 +56,8 @@
 		03B6EE3D241902AA00E7B6F1 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6EE3C241902AA00E7B6F1 /* AccountViewController.swift */; };
 		03B6EE40241AA0E000E7B6F1 /* OAuthList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6EE3F241AA0E000E7B6F1 /* OAuthList.swift */; };
 		03B6EE43241D96DB00E7B6F1 /* OAuthListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6EE42241D96DB00E7B6F1 /* OAuthListViewModel.swift */; };
+		03DBE715246839C0008248AC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035AC73E2464B58D00A6EE1C /* RxSwift.framework */; };
+		03DBE716246839C0008248AC /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 035AC73E2464B58D00A6EE1C /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,7 @@
 				0359446C244E0AD4003A7D73 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */,
 				03594469244E0A51003A7D73 /* AWSMobileClient.framework in Embed Frameworks */,
 				03594471244E0BE1003A7D73 /* AWSUserPoolsSignIn.framework in Embed Frameworks */,
+				03DBE716246839C0008248AC /* RxSwift.framework in Embed Frameworks */,
 				03594467244E091F003A7D73 /* AWSAuthCore.framework in Embed Frameworks */,
 				0359446F244E0B6E003A7D73 /* AWSCognitoIdentityProviderASF.framework in Embed Frameworks */,
 				034F14B823EB2D4A0003AF26 /* AWSCore.framework in Embed Frameworks */,
@@ -161,6 +164,7 @@
 				0359446B244E0AD4003A7D73 /* AWSCognitoIdentityProvider.framework in Frameworks */,
 				03594468244E0A51003A7D73 /* AWSMobileClient.framework in Frameworks */,
 				03594470244E0BE1003A7D73 /* AWSUserPoolsSignIn.framework in Frameworks */,
+				03DBE715246839C0008248AC /* RxSwift.framework in Frameworks */,
 				03594466244E091F003A7D73 /* AWSAuthCore.framework in Frameworks */,
 				0359446E244E0B6E003A7D73 /* AWSCognitoIdentityProviderASF.framework in Frameworks */,
 				034F14B723EB2D4A0003AF26 /* AWSCore.framework in Frameworks */,
@@ -512,6 +516,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/AWSCognitoIdentityProvider.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AWSCognitoIdentityProviderASF.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AWSUserPoolsSignIn.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -526,6 +531,7 @@
 				"$(DERIVED_FILE_DIR)/AWSCognitoIdentityProvider.framework",
 				"$(DERIVED_FILE_DIR)/AWSCognitoIdentityProviderASF.framework",
 				"$(DERIVED_FILE_DIR)/AWSUserPoolsSignIn.framework",
+				"$(DERIVED_FILE_DIR)/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

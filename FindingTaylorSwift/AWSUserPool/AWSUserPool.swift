@@ -10,13 +10,15 @@ import AWSAuthCore
 import AWSAuthUI
 import AWSMobileClient
 import UIKit
+import RxSwift
 
 class AWSUserPool {
 
     var userAuthenticationStatus: UserAuthenticationState?
+    var userAuthenticationError: Observable<Error>?
+    private let disposeBag = DisposeBag()
 
     internal init() {
-
         initalizeAWSMobileClient()
     }
 
@@ -53,24 +55,43 @@ class AWSUserPool {
 
     internal func userLogin(userName: String, password: String) {
 
-        AWSMobileClient.default().signIn(username: userName, password: password) { (signInResult, error) in
-            if let error = error {
-                print(error)
-            } else if let signInResult = signInResult {
-                switch signInResult.signInState {
+        let result = AWSMobileClient.default().rx.signIn(username: userName, password: password)
+            .materialize()
+
+        result
+            .compactMap { $0.element }
+            .subscribe(onNext: { signinResult in
+                switch signinResult.signInState {
                 case .signedIn:
                     print("User is signed in.")
                     self.userAuthenticationStatus = .signedIn
                 case .smsMFA:
-                    print("SMS message sent to \(signInResult.codeDetails!.destination!)")
+                    print("SMS message sent to \(signinResult.codeDetails!.destination!)")
                 default:
                     print("Sign In needs info which is not yet supported.")
                 }
-            }
-        }
+            })
+            .disposed(by: disposeBag)
+        userAuthenticationError = result.compactMap { $0.error }
     }
 
     internal func userLogout() {
         AWSMobileClient.default().signOut()
+    }
+}
+
+extension Reactive where Base: AWSMobileClient {
+    func signIn(username: String, password: String) -> Observable<SignInResult> {
+        return Observable.create { observer in
+            self.base.signIn(username: username, password: password) { (signinResult, error) in
+                if let signinResult = signinResult {
+                    observer.onNext(signinResult)
+                    observer.onCompleted()
+                } else {
+                    observer.onError(error ?? RxError.unknown)
+                }
+            }
+            return Disposables.create()
+        }
     }
 }

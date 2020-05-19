@@ -89,7 +89,15 @@ class SignInViewController: UIViewController {
     }
 
     @IBAction func forgotYourPassword(_ sender: UIButton) {
-        print("forgot your password")
+        self.performSegue(withIdentifier: AWSControllers.forgotPasswordEmail, sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == AWSControllers.forgotPasswordEmail {
+            if let nextViewController = segue.destination as? ForgotPasswordEmailViewController {
+                nextViewController.awsUserPool = awsUserPool
+            }
+        }
     }
 
     private func showAlert(title: String, message: String) {

@@ -86,7 +86,8 @@ enum OAuthError: Error {
 
 enum AWSControllers {
     static let signIn = "awsSignInController"
-    static let forgotPassword = "awsForgotPasswordController"
+    static let forgotPasswordEmail = "awsForgotPasswordEmail"
+    static let forgotPasswordUpdate = "awsForgotPasswordUpdate"
 }
 
 enum UserAuthenticationState {

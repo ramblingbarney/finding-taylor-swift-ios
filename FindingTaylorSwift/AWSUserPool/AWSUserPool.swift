@@ -78,12 +78,12 @@ class AWSUserPool {
     internal func userLogout() {
         AWSMobileClient.default().signOut()
     }
-    
+
     internal func forgotPasswordGetConfirmationCode(username: String) {
-        
+
         AWSMobileClient.default().forgotPassword(username: "my_username") { (forgotPasswordResult, error) in
             if let forgotPasswordResult = forgotPasswordResult {
-                switch(forgotPasswordResult.forgotPasswordState) {
+                switch forgotPasswordResult.forgotPasswordState {
                 case .confirmationCodeSent:
                     print("Confirmation code sent via \(forgotPasswordResult.codeDeliveryDetails!.deliveryMedium) to: \(forgotPasswordResult.codeDeliveryDetails!.destination!)")
                 default:
@@ -94,12 +94,12 @@ class AWSUserPool {
             }
         }
     }
-    
+
     internal func updatePasswordWithConfirmationCode(username: String, newPassword: String, confirmationCode: Int) {
-        
+
         AWSMobileClient.default().confirmForgotPassword(username: "my_username", newPassword: "MyNewPassword123!!", confirmationCode: "ConfirmationCode") { (forgotPasswordResult, error) in
             if let forgotPasswordResult = forgotPasswordResult {
-                switch(forgotPasswordResult.forgotPasswordState) {
+                switch forgotPasswordResult.forgotPasswordState {
                 case .done:
                     print("Password changed successfully")
                 default:
@@ -110,8 +110,6 @@ class AWSUserPool {
             }
         }
     }
-    
-    
 }
 
 extension Reactive where Base: AWSMobileClient {

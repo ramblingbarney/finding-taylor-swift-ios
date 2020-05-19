@@ -56,7 +56,7 @@ class AccountViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "awsSignInController" {
+        if segue.identifier == AWSControllers.signIn {
             if let nextViewController = segue.destination as? SignInViewController {
                 nextViewController.awsUserPool = awsUserPool
             }

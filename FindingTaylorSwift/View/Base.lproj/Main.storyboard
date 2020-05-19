@@ -263,11 +263,28 @@
                         <outlet property="password" destination="Tyj-jj-QFU" id="KA3-HK-q8y"/>
                         <outlet property="signInButton" destination="4vF-te-sHM" id="y56-q9-WIZ"/>
                         <outlet property="userName" destination="Yrl-L4-BaU" id="Kt0-Rb-sfK"/>
+                        <segue destination="XGM-bs-MJE" kind="show" identifier="awsForgotPasswordEmail" id="Wp7-t2-Q7u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98E-33-Cu8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-260" y="1198.6506746626687"/>
+        </scene>
+        <!--Forgot Password Email View Controller-->
+        <scene sceneID="tU8-pc-2qK">
+            <objects>
+                <viewController id="XGM-bs-MJE" customClass="forgotPasswordEmailViewController" customModule="FindingTaylorSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qs6-2m-94n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Mhl-Hl-GYE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dqH-3A-JFi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YwF-zD-bfw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="567" y="1197"/>
         </scene>
         <!--Swifties-->
         <scene sceneID="oZM-HA-6I7">

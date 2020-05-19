@@ -277,14 +277,64 @@
                     <view key="view" contentMode="scaleToFill" id="Qs6-2m-94n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteShirtDoorIcon" translatesAutoresizingMaskIntoConstraints="NO" id="1Tx-oA-oVu">
+                                <rect key="frame" x="137.5" y="64" width="100" height="120"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osa-mW-lvh">
+                                <rect key="frame" x="36" y="194" width="303" height="20"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Enter your email to reset your password">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="17" name="SFProRounded-Bold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d3P-Dv-t9w">
+                                <rect key="frame" x="78.5" y="224" width="218" height="34"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ip-CT-XHE">
+                                <rect key="frame" x="79" y="266" width="217" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Forgot Password">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="15" name="SFProRounded-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.66666666669999997" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1Tx-oA-oVu" firstAttribute="leading" secondItem="Mhl-Hl-GYE" secondAttribute="leading" constant="137.5" id="IIZ-NM-QFr"/>
+                            <constraint firstItem="7ip-CT-XHE" firstAttribute="top" secondItem="d3P-Dv-t9w" secondAttribute="bottom" constant="8" id="UmS-rg-ByM"/>
+                            <constraint firstItem="Mhl-Hl-GYE" firstAttribute="trailing" secondItem="d3P-Dv-t9w" secondAttribute="trailing" constant="78.5" id="VL0-t1-Ye1"/>
+                            <constraint firstItem="d3P-Dv-t9w" firstAttribute="top" secondItem="osa-mW-lvh" secondAttribute="bottom" constant="10" id="WBD-IA-nUy"/>
+                            <constraint firstItem="1Tx-oA-oVu" firstAttribute="top" secondItem="Mhl-Hl-GYE" secondAttribute="top" constant="20" id="g47-ju-jfW"/>
+                            <constraint firstItem="osa-mW-lvh" firstAttribute="top" secondItem="1Tx-oA-oVu" secondAttribute="bottom" constant="10" id="gzc-HJ-vm8"/>
+                            <constraint firstItem="Mhl-Hl-GYE" firstAttribute="trailing" secondItem="1Tx-oA-oVu" secondAttribute="trailing" constant="137.5" id="hg4-Im-Tum"/>
+                            <constraint firstItem="7ip-CT-XHE" firstAttribute="leading" secondItem="Mhl-Hl-GYE" secondAttribute="leading" constant="79" id="nHz-GW-Ank"/>
+                            <constraint firstItem="osa-mW-lvh" firstAttribute="leading" secondItem="Mhl-Hl-GYE" secondAttribute="leading" constant="36" id="t5v-CE-rgA"/>
+                            <constraint firstItem="Mhl-Hl-GYE" firstAttribute="trailing" secondItem="7ip-CT-XHE" secondAttribute="trailing" constant="79" id="wMu-mV-JQj"/>
+                            <constraint firstItem="Mhl-Hl-GYE" firstAttribute="trailing" secondItem="osa-mW-lvh" secondAttribute="trailing" constant="36" id="x2M-kQ-LeX"/>
+                            <constraint firstItem="d3P-Dv-t9w" firstAttribute="leading" secondItem="Mhl-Hl-GYE" secondAttribute="leading" constant="78.5" id="xpT-M3-rVM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Mhl-Hl-GYE"/>
                     </view>
                     <navigationItem key="navigationItem" id="dqH-3A-JFi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YwF-zD-bfw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="567" y="1197"/>
+            <point key="canvasLocation" x="565.60000000000002" y="1196.8515742128936"/>
         </scene>
         <!--Swifties-->
         <scene sceneID="oZM-HA-6I7">

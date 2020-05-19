@@ -78,6 +78,40 @@ class AWSUserPool {
     internal func userLogout() {
         AWSMobileClient.default().signOut()
     }
+    
+    internal func forgotPasswordGetConfirmationCode(username: String) {
+        
+        AWSMobileClient.default().forgotPassword(username: "my_username") { (forgotPasswordResult, error) in
+            if let forgotPasswordResult = forgotPasswordResult {
+                switch(forgotPasswordResult.forgotPasswordState) {
+                case .confirmationCodeSent:
+                    print("Confirmation code sent via \(forgotPasswordResult.codeDeliveryDetails!.deliveryMedium) to: \(forgotPasswordResult.codeDeliveryDetails!.destination!)")
+                default:
+                    print("Error: Invalid case.")
+                }
+            } else if let error = error {
+                print("Error occurred: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    internal func updatePasswordWithConfirmationCode(username: String, newPassword: String, confirmationCode: Int) {
+        
+        AWSMobileClient.default().confirmForgotPassword(username: "my_username", newPassword: "MyNewPassword123!!", confirmationCode: "ConfirmationCode") { (forgotPasswordResult, error) in
+            if let forgotPasswordResult = forgotPasswordResult {
+                switch(forgotPasswordResult.forgotPasswordState) {
+                case .done:
+                    print("Password changed successfully")
+                default:
+                    print("Error: Could not change password.")
+                }
+            } else if let error = error {
+                print("Error occurred: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    
 }
 
 extension Reactive where Base: AWSMobileClient {

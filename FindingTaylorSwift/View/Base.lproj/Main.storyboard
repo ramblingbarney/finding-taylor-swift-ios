@@ -273,7 +273,7 @@
         <!--Forgot Password Email View Controller-->
         <scene sceneID="tU8-pc-2qK">
             <objects>
-                <viewController id="XGM-bs-MJE" customClass="forgotPasswordEmailViewController" customModule="FindingTaylorSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XGM-bs-MJE" customClass="ForgotPasswordEmailViewController" customModule="FindingTaylorSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qs6-2m-94n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -293,13 +293,13 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d3P-Dv-t9w">
-                                <rect key="frame" x="78.5" y="224" width="218" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4si-oD-Yee">
+                                <rect key="frame" x="78.5" y="222" width="218" height="34"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ip-CT-XHE">
-                                <rect key="frame" x="79" y="266" width="217" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZHW-lQ-KjE">
+                                <rect key="frame" x="79" y="264" width="217" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -311,26 +311,33 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="sendConfirmationCodeClick:" destination="XGM-bs-MJE" eventType="touchUpInside" id="hk8-Ij-HwH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.66666666669999997" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1Tx-oA-oVu" firstAttribute="leading" secondItem="Mhl-Hl-GYE" secondAttribute="leading" constant="137.5" id="IIZ-NM-QFr"/>
-                            <constraint firstItem="7ip-CT-XHE" firstAttribute="top" secondItem="d3P-Dv-t9w" secondAttribute="bottom" constant="8" id="UmS-rg-ByM"/>
-                            <constraint firstItem="Mhl-Hl-GYE" firstAttribute="trailing" secondItem="d3P-Dv-t9w" secondAttribute="trailing" constant="78.5" id="VL0-t1-Ye1"/>
-                            <constraint firstItem="d3P-Dv-t9w" firstAttribute="top" secondItem="osa-mW-lvh" secondAttribute="bottom" constant="10" id="WBD-IA-nUy"/>
                             <constraint firstItem="1Tx-oA-oVu" firstAttribute="top" secondItem="Mhl-Hl-GYE" secondAttribute="top" constant="20" id="g47-ju-jfW"/>
                             <constraint firstItem="osa-mW-lvh" firstAttribute="top" secondItem="1Tx-oA-oVu" secondAttribute="bottom" constant="10" id="gzc-HJ-vm8"/>
                             <constraint firstItem="Mhl-Hl-GYE" firstAttribute="trailing" secondItem="1Tx-oA-oVu" secondAttribute="trailing" constant="137.5" id="hg4-Im-Tum"/>
-                            <constraint firstItem="7ip-CT-XHE" firstAttribute="leading" secondItem="Mhl-Hl-GYE" secondAttribute="leading" constant="79" id="nHz-GW-Ank"/>
+                            <constraint firstItem="ZHW-lQ-KjE" firstAttribute="top" secondItem="4si-oD-Yee" secondAttribute="bottom" constant="8" id="j3O-u0-36J"/>
+                            <constraint firstItem="Mhl-Hl-GYE" firstAttribute="trailing" secondItem="4si-oD-Yee" secondAttribute="trailing" constant="78.5" id="kU7-BF-AmU"/>
+                            <constraint firstItem="ZHW-lQ-KjE" firstAttribute="leading" secondItem="Mhl-Hl-GYE" secondAttribute="leading" constant="79" id="nAg-8R-i80"/>
                             <constraint firstItem="osa-mW-lvh" firstAttribute="leading" secondItem="Mhl-Hl-GYE" secondAttribute="leading" constant="36" id="t5v-CE-rgA"/>
-                            <constraint firstItem="Mhl-Hl-GYE" firstAttribute="trailing" secondItem="7ip-CT-XHE" secondAttribute="trailing" constant="79" id="wMu-mV-JQj"/>
+                            <constraint firstItem="4si-oD-Yee" firstAttribute="leading" secondItem="Mhl-Hl-GYE" secondAttribute="leading" constant="78.5" id="t7T-oP-iMK"/>
+                            <constraint firstItem="4si-oD-Yee" firstAttribute="top" secondItem="osa-mW-lvh" secondAttribute="bottom" constant="8" id="tAF-hW-3D3"/>
                             <constraint firstItem="Mhl-Hl-GYE" firstAttribute="trailing" secondItem="osa-mW-lvh" secondAttribute="trailing" constant="36" id="x2M-kQ-LeX"/>
-                            <constraint firstItem="d3P-Dv-t9w" firstAttribute="leading" secondItem="Mhl-Hl-GYE" secondAttribute="leading" constant="78.5" id="xpT-M3-rVM"/>
+                            <constraint firstItem="Mhl-Hl-GYE" firstAttribute="trailing" secondItem="ZHW-lQ-KjE" secondAttribute="trailing" constant="79" id="z06-o8-4pM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mhl-Hl-GYE"/>
                     </view>
                     <navigationItem key="navigationItem" id="dqH-3A-JFi"/>
+                    <connections>
+                        <outlet property="emailUsername" destination="4si-oD-Yee" id="5mt-nF-EEY"/>
+                        <outlet property="sendConfirmationCode" destination="ZHW-lQ-KjE" id="y2j-NG-t53"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YwF-zD-bfw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

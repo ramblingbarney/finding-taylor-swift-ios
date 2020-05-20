@@ -81,7 +81,7 @@ class AWSUserPool {
 
     internal func forgotPasswordGetConfirmationCode(username: String) {
 
-        AWSMobileClient.default().forgotPassword(username: "my_username") { (forgotPasswordResult, error) in
+        AWSMobileClient.default().forgotPassword(username: username) { (forgotPasswordResult, error) in
             if let forgotPasswordResult = forgotPasswordResult {
                 switch forgotPasswordResult.forgotPasswordState {
                 case .confirmationCodeSent:

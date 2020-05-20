@@ -9,6 +9,9 @@ import UIKit
 
 class ForgotPasswordEmailViewController: UIViewController {
 
+    @IBOutlet var emailUsername: UITextField!
+    @IBOutlet var sendConfirmationCode: UIButton!
+
     var awsUserPool: AWSUserPool!
 
     override func viewDidLoad() {
@@ -19,5 +22,20 @@ class ForgotPasswordEmailViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1)
         self.navigationItem.title = "Forgot Password"
         view.backgroundColor = #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1)
+    }
+
+    @IBAction func sendConfirmationCodeClick(_ sender: UIButton) {
+
+        guard let emailAddress = emailUsername.text else {return}
+        awsUserPool.forgotPasswordGetConfirmationCode(username: emailAddress)
+        self.performSegue(withIdentifier: AWSControllers.forgotPasswordUpdate, sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == AWSControllers.forgotPasswordEmail {
+            if let nextViewController = segue.destination as? ForgotPasswordEmailViewController {
+                nextViewController.awsUserPool = awsUserPool
+            }
+        }
     }
 }

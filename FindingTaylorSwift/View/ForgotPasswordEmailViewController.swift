@@ -33,7 +33,7 @@ class ForgotPasswordEmailViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == AWSControllers.forgotPasswordEmail {
-            if let nextViewController = segue.destination as? ForgotPasswordEmailViewController {
+            if let nextViewController = segue.destination as? UpdatePasswordViewController {
                 nextViewController.awsUserPool = awsUserPool
             }
         }

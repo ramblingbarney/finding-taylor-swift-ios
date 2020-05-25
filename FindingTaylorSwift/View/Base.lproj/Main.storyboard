@@ -337,11 +337,90 @@
                     <connections>
                         <outlet property="emailUsername" destination="4si-oD-Yee" id="5mt-nF-EEY"/>
                         <outlet property="sendConfirmationCode" destination="ZHW-lQ-KjE" id="y2j-NG-t53"/>
+                        <segue destination="mvo-O1-8Y5" kind="show" identifier="awsForgotPasswordUpdate" id="ZYi-84-PEl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YwF-zD-bfw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="565.60000000000002" y="1196.8515742128936"/>
+        </scene>
+        <!--Update Password View Controller-->
+        <scene sceneID="44t-bV-Py5">
+            <objects>
+                <viewController id="mvo-O1-8Y5" customClass="UpdatePasswordViewController" customModule="FindingTaylorSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lJC-ur-3ux">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteShirtDoorIcon" translatesAutoresizingMaskIntoConstraints="NO" id="eo0-ck-Tkb">
+                                <rect key="frame" x="137.5" y="64" width="100" height="120"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qV-G4-4GB">
+                                <rect key="frame" x="36" y="194" width="303" height="40"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Please enter your confirmation code 
+and your new password</string>
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="17" name="SFProRounded-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Confirmation Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CCO-na-GPm">
+                                <rect key="frame" x="78.5" y="242" width="218" height="34"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="New Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Dy-eh-MuA">
+                                <rect key="frame" x="78.5" y="284" width="218" height="34"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bBE-aB-0Ec">
+                                <rect key="frame" x="79" y="326" width="217" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Update Password">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="15" name="SFProRounded-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.66666666669999997" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="CCO-na-GPm" firstAttribute="top" secondItem="5qV-G4-4GB" secondAttribute="bottom" constant="8" id="ESj-hz-xwh"/>
+                            <constraint firstItem="CCO-na-GPm" firstAttribute="leading" secondItem="G5J-31-PcM" secondAttribute="leading" constant="78.5" id="FGH-Ss-OMb"/>
+                            <constraint firstItem="eo0-ck-Tkb" firstAttribute="leading" secondItem="G5J-31-PcM" secondAttribute="leading" constant="137.5" id="Hsv-up-bl3"/>
+                            <constraint firstItem="G5J-31-PcM" firstAttribute="trailing" secondItem="bBE-aB-0Ec" secondAttribute="trailing" constant="79" id="O3g-GI-w9L"/>
+                            <constraint firstItem="eo0-ck-Tkb" firstAttribute="top" secondItem="G5J-31-PcM" secondAttribute="top" constant="20" id="Vic-vj-6BA"/>
+                            <constraint firstItem="5qV-G4-4GB" firstAttribute="leading" secondItem="G5J-31-PcM" secondAttribute="leading" constant="36" id="YBL-QV-tiE"/>
+                            <constraint firstItem="7Dy-eh-MuA" firstAttribute="top" secondItem="CCO-na-GPm" secondAttribute="bottom" constant="8" id="ZZR-wB-G13"/>
+                            <constraint firstItem="G5J-31-PcM" firstAttribute="trailing" secondItem="5qV-G4-4GB" secondAttribute="trailing" constant="36" id="bgg-ty-Odi"/>
+                            <constraint firstItem="G5J-31-PcM" firstAttribute="trailing" secondItem="eo0-ck-Tkb" secondAttribute="trailing" constant="137.5" id="m77-To-cfd"/>
+                            <constraint firstItem="7Dy-eh-MuA" firstAttribute="leading" secondItem="G5J-31-PcM" secondAttribute="leading" constant="78.5" id="oD7-fx-h7F"/>
+                            <constraint firstItem="bBE-aB-0Ec" firstAttribute="top" secondItem="7Dy-eh-MuA" secondAttribute="bottom" constant="8" id="rUi-OV-kJU"/>
+                            <constraint firstItem="G5J-31-PcM" firstAttribute="trailing" secondItem="7Dy-eh-MuA" secondAttribute="trailing" constant="78.5" id="s1k-Gz-8Gv"/>
+                            <constraint firstItem="5qV-G4-4GB" firstAttribute="top" secondItem="eo0-ck-Tkb" secondAttribute="bottom" constant="10" id="vd0-w4-a8U"/>
+                            <constraint firstItem="G5J-31-PcM" firstAttribute="trailing" secondItem="CCO-na-GPm" secondAttribute="trailing" constant="78.5" id="vwo-b0-Zgi"/>
+                            <constraint firstItem="5qV-G4-4GB" firstAttribute="top" secondItem="eo0-ck-Tkb" secondAttribute="bottom" constant="10" id="wiE-ZD-9dT"/>
+                            <constraint firstItem="bBE-aB-0Ec" firstAttribute="leading" secondItem="G5J-31-PcM" secondAttribute="leading" constant="79" id="zAX-QQ-dbu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G5J-31-PcM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bbU-1p-Nzg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tfF-Qm-Bhb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1362" y="1197"/>
         </scene>
         <!--Swifties-->
         <scene sceneID="oZM-HA-6I7">

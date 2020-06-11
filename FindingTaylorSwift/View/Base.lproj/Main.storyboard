@@ -393,6 +393,9 @@ and your new password</string>
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="updatePasword:" destination="mvo-O1-8Y5" eventType="touchUpInside" id="LVS-iz-GZz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.66666666669999997" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -417,6 +420,10 @@ and your new password</string>
                         <viewLayoutGuide key="safeArea" id="G5J-31-PcM"/>
                     </view>
                     <navigationItem key="navigationItem" id="bbU-1p-Nzg"/>
+                    <connections>
+                        <outlet property="confirmationCode" destination="CCO-na-GPm" id="0TZ-08-NAn"/>
+                        <outlet property="password" destination="7Dy-eh-MuA" id="EB3-N9-mLY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfF-Qm-Bhb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

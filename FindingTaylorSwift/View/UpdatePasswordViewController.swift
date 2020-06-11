@@ -8,7 +8,8 @@
 import UIKit
 
 class UpdatePasswordViewController: UIViewController {
-
+    @IBOutlet var confirmationCode: UITextField!
+    @IBOutlet var password: UITextField!
     weak var awsUserPool: AWSUserPool!
 
     override func viewDidLoad() {
@@ -20,4 +21,15 @@ class UpdatePasswordViewController: UIViewController {
         self.navigationItem.title = "Forgot Password"
         view.backgroundColor = #colorLiteral(red: 1, green: 0.738589704, blue: 0.9438112974, alpha: 1)
     }
+    
+    @IBAction func updatePasword(_ sender: UIButton) {
+        
+        guard let newConfirmationCode = confirmationCode.text else {return}
+        guard let newPassword = password.text else {return}
+        
+        
+    }
+    
+    
+    
 }

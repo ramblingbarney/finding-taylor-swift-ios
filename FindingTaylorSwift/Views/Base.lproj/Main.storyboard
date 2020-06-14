@@ -160,7 +160,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yrl-L4-BaU">
-                                <rect key="frame" x="78.5" y="192" width="218" height="34"/>
+                                <rect key="frame" x="78.5" y="73" width="218" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -171,10 +171,10 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteShirtDoorIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Ors-7z-CT6">
-                                <rect key="frame" x="137.5" y="64" width="100" height="120"/>
+                                <rect key="frame" x="137.5" y="64" width="100" height="1"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4vF-te-sHM">
-                                <rect key="frame" x="79" y="268" width="217" height="32"/>
+                                <rect key="frame" x="79" y="157" width="217" height="32"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
@@ -191,18 +191,8 @@
                                     <action selector="signIn:" destination="x7I-2Y-kGx" eventType="touchUpInside" id="Qjj-ez-HSZ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tyj-jj-QFU">
-                                <rect key="frame" x="78.5" y="226" width="218" height="34"/>
-                                <attributedString key="attributedText"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RF8-vN-2gH">
-                                <rect key="frame" x="201" y="308" width="114" height="25"/>
+                                <rect key="frame" x="201" y="197" width="114" height="25"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Forgot your password?">
@@ -218,7 +208,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hef-qJ-eJW">
-                                <rect key="frame" x="63" y="308" width="108" height="26"/>
+                                <rect key="frame" x="63" y="197" width="108" height="26"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Create new account">
@@ -233,6 +223,16 @@
                                     <action selector="createNewAccount:" destination="x7I-2Y-kGx" eventType="touchUpInside" id="ZcE-lg-XXd"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tyj-jj-QFU">
+                                <rect key="frame" x="78.5" y="115" width="218" height="34"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.66666666669999997" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -248,8 +248,8 @@
                             <constraint firstItem="RF8-vN-2gH" firstAttribute="top" secondItem="4vF-te-sHM" secondAttribute="bottom" constant="8" id="TBG-Nj-sVX"/>
                             <constraint firstItem="RF8-vN-2gH" firstAttribute="leading" secondItem="hef-qJ-eJW" secondAttribute="trailing" constant="30" id="gAk-03-g9S"/>
                             <constraint firstItem="4vF-te-sHM" firstAttribute="leading" secondItem="DEY-li-9RB" secondAttribute="leading" constant="79" id="gMY-PH-qMR"/>
-                            <constraint firstItem="Tyj-jj-QFU" firstAttribute="top" secondItem="Yrl-L4-BaU" secondAttribute="bottom" id="gy9-L4-gOl"/>
                             <constraint firstItem="DEY-li-9RB" firstAttribute="trailing" secondItem="4vF-te-sHM" secondAttribute="trailing" constant="79" id="o7A-2q-fXj"/>
+                            <constraint firstItem="Tyj-jj-QFU" firstAttribute="top" secondItem="Yrl-L4-BaU" secondAttribute="bottom" constant="8" id="pZg-xA-0j7"/>
                             <constraint firstItem="Tyj-jj-QFU" firstAttribute="leading" secondItem="DEY-li-9RB" secondAttribute="leading" constant="78.5" id="t0g-bP-Ucw"/>
                             <constraint firstItem="Yrl-L4-BaU" firstAttribute="top" secondItem="Ors-7z-CT6" secondAttribute="bottom" constant="8" id="u31-sA-q3b"/>
                             <constraint firstItem="DEY-li-9RB" firstAttribute="trailing" secondItem="Yrl-L4-BaU" secondAttribute="trailing" constant="78.5" id="ygK-bJ-w7x"/>
@@ -279,10 +279,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteShirtDoorIcon" translatesAutoresizingMaskIntoConstraints="NO" id="1Tx-oA-oVu">
-                                <rect key="frame" x="137.5" y="64" width="100" height="120"/>
+                                <rect key="frame" x="137.5" y="64" width="100" height="1"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osa-mW-lvh">
-                                <rect key="frame" x="36" y="194" width="303" height="20"/>
+                                <rect key="frame" x="36" y="75" width="303" height="20"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Enter your email to reset your password">
                                         <attributes>
@@ -294,12 +294,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4si-oD-Yee">
-                                <rect key="frame" x="78.5" y="222" width="218" height="34"/>
+                                <rect key="frame" x="78.5" y="103" width="218" height="34"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZHW-lQ-KjE">
-                                <rect key="frame" x="79" y="264" width="217" height="30"/>
+                                <rect key="frame" x="79" y="145" width="217" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -353,10 +353,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteShirtDoorIcon" translatesAutoresizingMaskIntoConstraints="NO" id="eo0-ck-Tkb">
-                                <rect key="frame" x="137.5" y="64" width="100" height="120"/>
+                                <rect key="frame" x="137.5" y="64" width="100" height="1"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qV-G4-4GB">
-                                <rect key="frame" x="36" y="194" width="303" height="40"/>
+                                <rect key="frame" x="36" y="75" width="303" height="40"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Please enter your confirmation code 
@@ -371,17 +371,17 @@ and your new password</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Confirmation Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CCO-na-GPm">
-                                <rect key="frame" x="78.5" y="242" width="218" height="34"/>
+                                <rect key="frame" x="78.5" y="123" width="218" height="34"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="New Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Dy-eh-MuA">
-                                <rect key="frame" x="78.5" y="284" width="218" height="34"/>
+                                <rect key="frame" x="78.5" y="165" width="218" height="34"/>
                                 <attributedString key="attributedText"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bBE-aB-0Ec">
-                                <rect key="frame" x="79" y="326" width="217" height="30"/>
+                                <rect key="frame" x="79" y="207" width="217" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">

@@ -25,8 +25,8 @@ class UpdatePasswordViewController: UIViewController {
 
     @IBAction func updatePasword(_ sender: UIButton) {
 
-        guard let newConfirmationCode = confirmationCode.text else {return}
-        guard let newPassword = password.text else {return}
+        guard let newConfirmationCode = confirmationCode.text else { return }
+        guard let newPassword = password.text else { return }
 
         if !newConfirmationCode.isNumber || newConfirmationCode.isBlank {
             confirmationCode.layer.borderWidth = 2
@@ -42,9 +42,9 @@ class UpdatePasswordViewController: UIViewController {
             return
         }
 
-        guard let confirmationCodeNumber = Int(confirmationCode.text!) else {return}
+        guard let confirmationCodeNumber = Int(newConfirmationCode) else { return }
 
-        if newConfirmationCode.validateEmail && !newPassword.isBlank {
+        if newConfirmationCode.isNumber && !newPassword.isBlank {
 
             awsUserPool.updatePasswordWithConfirmationCode(username: awsUserName, newPassword: newPassword, confirmationCode: confirmationCodeNumber)
             confirmationCode.text = ""

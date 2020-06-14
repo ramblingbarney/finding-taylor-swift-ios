@@ -221,7 +221,7 @@
 				0359447824579979003A7D73 /* AWSUserPool */,
 				03B6EE41241D95B500E7B6F1 /* ViewModel */,
 				03B6EE3E241AA0BB00E7B6F1 /* Model */,
-				034F14DA23EC11670003AF26 /* View */,
+				034F14DA23EC11670003AF26 /* Views */,
 				034F14D723EB88310003AF26 /* Extensions */,
 				034F14D423EB87C50003AF26 /* Enums */,
 				034F14CD23EB79EA0003AF26 /* FileHandler */,
@@ -330,7 +330,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		034F14DA23EC11670003AF26 /* View */ = {
+		034F14DA23EC11670003AF26 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				034F148223E986890003AF26 /* LaunchScreen.storyboard */,
@@ -343,7 +343,7 @@
 				03DBE7172474824D008248AC /* ForgotPasswordEmailViewController.swift */,
 				03DBE719247C6838008248AC /* UpdatePasswordViewController.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		0359447824579979003A7D73 /* AWSUserPool */ = {

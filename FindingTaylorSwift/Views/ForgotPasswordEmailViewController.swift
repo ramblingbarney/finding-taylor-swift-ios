@@ -13,6 +13,7 @@ class ForgotPasswordEmailViewController: UIViewController {
     @IBOutlet var sendConfirmationCode: UIButton!
 
     var awsUserPool: AWSUserPool!
+    var emailAddress: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +27,19 @@ class ForgotPasswordEmailViewController: UIViewController {
 
     @IBAction func sendConfirmationCodeClick(_ sender: UIButton) {
 
-        guard let emailAddress = emailUsername.text else {return}
+        if emailUsername.text != nil {
+            emailAddress = emailUsername.text
+        }
         awsUserPool.forgotPasswordGetConfirmationCode(username: emailAddress)
         self.performSegue(withIdentifier: AWSControllers.forgotPasswordUpdate, sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
         if segue.identifier == AWSControllers.forgotPasswordEmail {
             if let nextViewController = segue.destination as? UpdatePasswordViewController {
                 nextViewController.awsUserPool = awsUserPool
+                nextViewController.awsUserName = emailAddress
             }
         }
     }

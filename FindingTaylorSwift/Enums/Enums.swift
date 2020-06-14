@@ -117,3 +117,7 @@ enum EmailValidationError {
 enum PasswordValidationError {
     static let title = "Password"
     static let message = "Failed Validation: Blank"}
+
+enum ConfirmatiionCodeValidationError {
+static let title = "Confirmation Code"
+static let message = "Failed Validation: Blank or Not A Number"}

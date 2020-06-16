@@ -88,6 +88,7 @@ enum AWSControllers {
     static let signIn = "awsSignInController"
     static let forgotPasswordEmail = "awsForgotPasswordEmail"
     static let forgotPasswordUpdate = "awsForgotPasswordUpdate"
+    static let awsUpdatedPasswordSuccess = "awsUpdatedPasswordSuccess"
 }
 
 enum UserAuthenticationState {
@@ -116,8 +117,28 @@ enum EmailValidationError {
 
 enum PasswordValidationError {
     static let title = "Password"
-    static let message = "Failed Validation: Blank"}
+    static let message = "Failed Validation: Blank"
+}
 
 enum ConfirmatiionCodeValidationError {
-static let title = "Confirmation Code"
-static let message = "Failed Validation: Blank or Not A Number"}
+    static let title = "Confirmation Code"
+    static let message = "Failed Validation: Blank or Not A Number"
+}
+
+enum UpdatePasswordError {
+    static let titleDefault = "Password Update Failed"
+    static let messageDefault = "Your password has not been updated"
+    static let titleCode = "Confirmation Code"
+    static let messageCode = "Incorrect Confirmation Code"
+    static let titlePassword = "Password"
+    static let messagePasswordShort = "New Password Not Accepted: Too Short"
+    static let messagePasswordComplexity = "New Password Not Accepted: Too Simple"
+}
+
+enum UserPasswordUpdateStatus {
+    case passwordUpdateSuccessful
+}
+
+enum PasswordUpated {
+    static let title = "Password Updated"
+}

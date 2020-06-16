@@ -10,8 +10,7 @@ import UIKit
 class UpdatePasswordViewController: UIViewController {
     @IBOutlet var confirmationCode: UITextField!
     @IBOutlet var password: UITextField!
-    weak var awsUserPool: AWSUserPool!
-    var awsUserName: String!
+    weak var awsUserPoolUpdatePassword: AWSUserPool!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,15 +41,47 @@ class UpdatePasswordViewController: UIViewController {
             return
         }
 
-        guard let confirmationCodeNumber = Int(newConfirmationCode) else { return }
-
         if newConfirmationCode.isNumber && !newPassword.isBlank {
 
-            awsUserPool.updatePasswordWithConfirmationCode(username: awsUserName, newPassword: newPassword, confirmationCode: confirmationCodeNumber)
+            awsUserPoolUpdatePassword.updatePasswordWithConfirmationCode(newPassword: newPassword, confirmationCode: newConfirmationCode)
             confirmationCode.text = ""
             password.text = ""
             confirmationCode.layer.borderWidth = 0
             password.layer.borderWidth = 0
+        }
+
+        _ = self.awsUserPoolUpdatePassword.updatePasswordWithConfirmationCodeError?
+            .subscribe({ errorText in
+                guard let elementContent = errorText.element?.localizedDescription else { return }
+
+                switch elementContent {
+                case "The operation couldn’t be completed. (AWSMobileClient.AWSMobileClientError error 2.)":
+                    self.showAlert(title: UpdatePasswordError.titleCode, message: UpdatePasswordError.messageCode)
+                case "The operation couldn’t be completed. (AWSMobileClient.AWSMobileClientError error 8.)":
+                    self.showAlert(title: UpdatePasswordError.titlePassword, message: UpdatePasswordError.messagePasswordShort)
+                case "The operation couldn’t be completed. (AWSMobileClient.AWSMobileClientError error 9.)":
+                    self.showAlert(title: UpdatePasswordError.titlePassword, message: UpdatePasswordError.messagePasswordComplexity)
+                default:
+                    self.showAlert(title: UpdatePasswordError.titleDefault, message: UpdatePasswordError.messageDefault)
+                }
+            })
+
+        _ = self.awsUserPoolUpdatePassword.updatePasswordWithConfirmationCodeResult?
+            .subscribe({ resultText in
+                guard let elementContent = resultText.element?.forgotPasswordState else { return }
+
+                switch elementContent {
+                case .done:
+                    self.transitionToLogin()
+                default:
+                    self.showAlert(title: UpdatePasswordError.titleDefault, message: UpdatePasswordError.messageDefault)
+                }
+            })
+    }
+
+    private func transitionToLogin() {
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: AWSControllers.awsUpdatedPasswordSuccess, sender: self)
         }
     }
 

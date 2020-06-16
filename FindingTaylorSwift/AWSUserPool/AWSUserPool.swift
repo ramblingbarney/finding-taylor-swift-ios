@@ -15,7 +15,11 @@ import RxSwift
 class AWSUserPool {
 
     var userAuthenticationStatus: UserAuthenticationState?
+    var userPasswordUpdateStatus: UserPasswordUpdateStatus?
     var userAuthenticationError: Observable<Error>?
+    var updatePasswordWithConfirmationCodeError: Observable<Error>?
+    var updatePasswordWithConfirmationCodeResult: Observable<ForgotPasswordResult>?
+    var awsUserNameEmail: String?
     private let disposeBag = DisposeBag()
 
     internal init() {
@@ -81,6 +85,8 @@ class AWSUserPool {
 
     internal func forgotPasswordGetConfirmationCode(username: String) {
 
+        self.awsUserNameEmail = username
+
         AWSMobileClient.default().forgotPassword(username: username) { (forgotPasswordResult, error) in
             if let forgotPasswordResult = forgotPasswordResult {
                 switch forgotPasswordResult.forgotPasswordState {
@@ -95,29 +101,51 @@ class AWSUserPool {
         }
     }
 
-    internal func updatePasswordWithConfirmationCode(username: String, newPassword: String, confirmationCode: Int) {
+    internal func updatePasswordWithConfirmationCode(newPassword: String, confirmationCode: String) {
 
-        AWSMobileClient.default().confirmForgotPassword(username: "my_username", newPassword: "MyNewPassword123!!", confirmationCode: "ConfirmationCode") { (forgotPasswordResult, error) in
-            if let forgotPasswordResult = forgotPasswordResult {
+        guard let username = self.awsUserNameEmail else { return }
+
+        let result = AWSMobileClient.default().rx.confirmForgotPassword(username: username, newPassword: newPassword, confirmationCode: confirmationCode)
+            .materialize()
+
+        result
+            .compactMap { $0.element }
+            .subscribe(onNext: { forgotPasswordResult in
                 switch forgotPasswordResult.forgotPasswordState {
                 case .done:
                     print("Password changed successfully")
+                    self.userPasswordUpdateStatus = .passwordUpdateSuccessful
                 default:
                     print("Error: Could not change password.")
                 }
-            } else if let error = error {
-                print("Error occurred: \(error.localizedDescription)")
-            }
-        }
+            })
+            .disposed(by: disposeBag)
+        updatePasswordWithConfirmationCodeError = result.compactMap { $0.error }
+        updatePasswordWithConfirmationCodeResult = result.compactMap { $0.element }
     }
 }
 
 extension Reactive where Base: AWSMobileClient {
+
     func signIn(username: String, password: String) -> Observable<SignInResult> {
         return Observable.create { observer in
             self.base.signIn(username: username, password: password) { (signinResult, error) in
                 if let signinResult = signinResult {
                     observer.onNext(signinResult)
+                    observer.onCompleted()
+                } else {
+                    observer.onError(error ?? RxError.unknown)
+                }
+            }
+            return Disposables.create()
+        }
+    }
+
+    func confirmForgotPassword(username: String, newPassword: String, confirmationCode: String) -> Observable<ForgotPasswordResult> {
+        return Observable.create { observer in
+            self.base.confirmForgotPassword(username: username, newPassword: newPassword, confirmationCode: confirmationCode) { (confirmForgotPasswordResult, error) in
+                if let confirmForgotPasswordResult = confirmForgotPasswordResult {
+                    observer.onNext(confirmForgotPasswordResult)
                     observer.onCompleted()
                 } else {
                     observer.onError(error ?? RxError.unknown)

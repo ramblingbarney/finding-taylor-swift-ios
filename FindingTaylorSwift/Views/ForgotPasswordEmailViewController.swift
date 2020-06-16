@@ -11,7 +11,6 @@ class ForgotPasswordEmailViewController: UIViewController {
 
     @IBOutlet var emailUsername: UITextField!
     @IBOutlet var sendConfirmationCode: UIButton!
-
     var awsUserPool: AWSUserPool!
     var emailAddress: String!
 
@@ -36,10 +35,9 @@ class ForgotPasswordEmailViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-        if segue.identifier == AWSControllers.forgotPasswordEmail {
+        if segue.identifier == AWSControllers.forgotPasswordUpdate {
             if let nextViewController = segue.destination as? UpdatePasswordViewController {
-                nextViewController.awsUserPool = awsUserPool
-                nextViewController.awsUserName = emailAddress
+                nextViewController.awsUserPoolUpdatePassword = awsUserPool
             }
         }
     }

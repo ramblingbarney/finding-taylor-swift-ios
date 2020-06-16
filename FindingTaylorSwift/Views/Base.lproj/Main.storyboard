@@ -156,11 +156,11 @@
             <objects>
                 <viewController storyboardIdentifier="awsSignInController" id="x7I-2Y-kGx" customClass="SignInViewController" customModule="FindingTaylorSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MPf-MH-23d">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yrl-L4-BaU">
-                                <rect key="frame" x="78.5" y="73" width="218" height="34"/>
+                                <rect key="frame" x="78.5" y="148" width="218" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -171,10 +171,10 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteShirtDoorIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Ors-7z-CT6">
-                                <rect key="frame" x="137.5" y="64" width="100" height="1"/>
+                                <rect key="frame" x="137.5" y="20" width="100" height="120"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4vF-te-sHM">
-                                <rect key="frame" x="79" y="157" width="217" height="32"/>
+                                <rect key="frame" x="79" y="232" width="217" height="32"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
@@ -192,7 +192,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RF8-vN-2gH">
-                                <rect key="frame" x="201" y="197" width="114" height="25"/>
+                                <rect key="frame" x="201" y="272" width="114" height="25"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Forgot your password?">
@@ -208,7 +208,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hef-qJ-eJW">
-                                <rect key="frame" x="63" y="197" width="108" height="26"/>
+                                <rect key="frame" x="63" y="272" width="108" height="26"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Create new account">
@@ -224,7 +224,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tyj-jj-QFU">
-                                <rect key="frame" x="78.5" y="115" width="218" height="34"/>
+                                <rect key="frame" x="78.5" y="190" width="218" height="34"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -275,14 +275,14 @@
             <objects>
                 <viewController id="XGM-bs-MJE" customClass="ForgotPasswordEmailViewController" customModule="FindingTaylorSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qs6-2m-94n">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteShirtDoorIcon" translatesAutoresizingMaskIntoConstraints="NO" id="1Tx-oA-oVu">
-                                <rect key="frame" x="137.5" y="64" width="100" height="1"/>
+                                <rect key="frame" x="137.5" y="20" width="100" height="120"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osa-mW-lvh">
-                                <rect key="frame" x="36" y="75" width="303" height="20"/>
+                                <rect key="frame" x="36" y="150" width="303" height="20"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Enter your email to reset your password">
                                         <attributes>
@@ -294,12 +294,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4si-oD-Yee">
-                                <rect key="frame" x="78.5" y="103" width="218" height="34"/>
+                                <rect key="frame" x="78.5" y="178" width="218" height="34"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZHW-lQ-KjE">
-                                <rect key="frame" x="79" y="145" width="217" height="30"/>
+                                <rect key="frame" x="79" y="220" width="217" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -349,14 +349,14 @@
             <objects>
                 <viewController id="mvo-O1-8Y5" customClass="UpdatePasswordViewController" customModule="FindingTaylorSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lJC-ur-3ux">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteShirtDoorIcon" translatesAutoresizingMaskIntoConstraints="NO" id="eo0-ck-Tkb">
-                                <rect key="frame" x="137.5" y="64" width="100" height="1"/>
+                                <rect key="frame" x="137.5" y="20" width="100" height="120"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qV-G4-4GB">
-                                <rect key="frame" x="36" y="75" width="303" height="40"/>
+                                <rect key="frame" x="36" y="150" width="303" height="40"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Please enter your confirmation code 
@@ -371,17 +371,17 @@ and your new password</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Confirmation Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CCO-na-GPm">
-                                <rect key="frame" x="78.5" y="123" width="218" height="34"/>
+                                <rect key="frame" x="78.5" y="198" width="218" height="34"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="New Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Dy-eh-MuA">
-                                <rect key="frame" x="78.5" y="165" width="218" height="34"/>
+                                <rect key="frame" x="78.5" y="240" width="218" height="34"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bBE-aB-0Ec">
-                                <rect key="frame" x="79" y="207" width="217" height="30"/>
+                                <rect key="frame" x="79" y="282" width="217" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -423,6 +423,7 @@ and your new password</string>
                     <connections>
                         <outlet property="confirmationCode" destination="CCO-na-GPm" id="0TZ-08-NAn"/>
                         <outlet property="password" destination="7Dy-eh-MuA" id="EB3-N9-mLY"/>
+                        <segue destination="x7I-2Y-kGx" kind="show" identifier="awsUpdatedPasswordSuccess" id="CaU-D8-Zfl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfF-Qm-Bhb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -478,4 +479,7 @@ and your new password</string>
         <image name="photo.on.rectangle" catalog="system" width="64" height="48"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="CaU-D8-Zfl"/>
+    </inferredMetricsTieBreakers>
 </document>

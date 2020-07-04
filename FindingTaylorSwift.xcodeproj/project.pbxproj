@@ -50,6 +50,7 @@
 		03594471244E0BE1003A7D73 /* AWSUserPoolsSignIn.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 036DF396244CFB6700ED67CD /* AWSUserPoolsSignIn.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		035944732450E7E7003A7D73 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035944722450E7E7003A7D73 /* SignInViewController.swift */; };
 		0359447A245799B4003A7D73 /* AWSUserPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03594479245799B4003A7D73 /* AWSUserPool.swift */; };
+		035AD02124B0B75400BD82AF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035AD02024B0B75400BD82AF /* SignUpViewController.swift */; };
 		036DF347243D2CBB00ED67CD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036DF346243D2CBB00ED67CD /* Extensions.swift */; };
 		036DF3502447829400ED67CD /* WhiteTshirtPinkBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 036DF34F2447829300ED67CD /* WhiteTshirtPinkBackground.png */; };
 		036DF38F244CE2B400ED67CD /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 036DF38E244CE2B300ED67CD /* awsconfiguration.json */; };
@@ -142,6 +143,7 @@
 		035944722450E7E7003A7D73 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		03594479245799B4003A7D73 /* AWSUserPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSUserPool.swift; sourceTree = "<group>"; };
 		035AC73E2464B58D00A6EE1C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		035AD02024B0B75400BD82AF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		036DF346243D2CBB00ED67CD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		036DF34A2443BFE900ED67CD /* AppAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppAuth.framework; path = Carthage/Build/iOS/AppAuth.framework; sourceTree = "<group>"; };
 		036DF34F2447829300ED67CD /* WhiteTshirtPinkBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WhiteTshirtPinkBackground.png; path = FindingTaylorSwift/WhiteTshirtPinkBackground.png; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 				035944722450E7E7003A7D73 /* SignInViewController.swift */,
 				03DBE7172474824D008248AC /* ForgotPasswordEmailViewController.swift */,
 				03DBE719247C6838008248AC /* UpdatePasswordViewController.swift */,
+				035AD02024B0B75400BD82AF /* SignUpViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				034F14CC23EB75690003AF26 /* Structs.swift in Sources */,
 				034F14AC23E9E17C0003AF26 /* FindViewController.swift in Sources */,
 				03B6EE43241D96DB00E7B6F1 /* OAuthListViewModel.swift in Sources */,
+				035AD02124B0B75400BD82AF /* SignUpViewController.swift in Sources */,
 				034F14CF23EB7A070003AF26 /* AWSFileHandler.swift in Sources */,
 				036DF347243D2CBB00ED67CD /* Extensions.swift in Sources */,
 				03DBE7182474824D008248AC /* ForgotPasswordEmailViewController.swift in Sources */,

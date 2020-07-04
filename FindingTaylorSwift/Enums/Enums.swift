@@ -85,6 +85,7 @@ enum OAuthError: Error {
 }
 
 enum AWSControllers {
+    static let signUp = "awsSignUpController"
     static let signIn = "awsSignInController"
     static let forgotPasswordEmail = "awsForgotPasswordEmail"
     static let forgotPasswordUpdate = "awsForgotPasswordUpdate"
@@ -112,12 +113,17 @@ enum AWSUserAuthenticationNil {
 
 enum EmailValidationError {
     static let title = "Email"
-    static let message = "Failed Validation"
+    static let message = "Email Address Must Be Valid"
 }
 
 enum PasswordValidationError {
     static let title = "Password"
-    static let message = "Failed Validation: Blank"
+    static let message = "Password Does Not Meet The Criteria"
+}
+
+enum PasswordValidationErrorMatching {
+    static let title = "Both Passwords"
+    static let message = "The Passwords Do Not Match"
 }
 
 enum ConfirmatiionCodeValidationError {
@@ -130,6 +136,13 @@ enum UpdatePasswordError {
     static let messageDefault = "Your password has not been updated"
     static let titleCode = "Confirmation Code"
     static let messageCode = "Incorrect Confirmation Code"
+    static let titlePassword = "Password"
+    static let messagePasswordShort = "New Password Not Accepted: Too Short"
+    static let messagePasswordComplexity = "New Password Not Accepted: Too Simple"
+}
+
+enum CreateAccountError {
+
     static let titlePassword = "Password"
     static let messagePasswordShort = "New Password Not Accepted: Too Short"
     static let messagePasswordComplexity = "New Password Not Accepted: Too Simple"

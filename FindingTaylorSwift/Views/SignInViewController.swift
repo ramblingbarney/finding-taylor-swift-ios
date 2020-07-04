@@ -84,8 +84,7 @@ class SignInViewController: UIViewController {
     }
 
     @IBAction func createNewAccount(_ sender: UIButton) {
-
-        print("create new account")
+        self.performSegue(withIdentifier: AWSControllers.signUp, sender: self)
     }
 
     @IBAction func forgotYourPassword(_ sender: UIButton) {
@@ -96,6 +95,11 @@ class SignInViewController: UIViewController {
         if segue.identifier == AWSControllers.forgotPasswordEmail {
             if let nextViewController = segue.destination as? ForgotPasswordEmailViewController {
                 nextViewController.awsUserPool = awsUserPool
+            }
+        }
+        if segue.identifier == AWSControllers.signUp {
+            if let nextViewController = segue.destination as? SignUpViewController {
+                nextViewController.awsUserPoolSignUp = awsUserPool
             }
         }
     }

@@ -17,6 +17,7 @@ class AWSUserPool {
     var userAuthenticationStatus: UserAuthenticationState?
     var userPasswordUpdateStatus: UserPasswordUpdateStatus?
     var userAuthenticationError: Observable<Error>?
+    var userAuthenticationResult: Observable<SignInResult>?
     var updatePasswordWithConfirmationCodeError: Observable<Error>?
     var updatePasswordWithConfirmationCodeResult: Observable<ForgotPasswordResult>?
     var awsUserNameEmail: String?
@@ -77,6 +78,7 @@ class AWSUserPool {
             })
             .disposed(by: disposeBag)
         userAuthenticationError = result.compactMap { $0.error }
+        userAuthenticationResult = result.compactMap { $0.element }
     }
 
     internal func userLogout() {

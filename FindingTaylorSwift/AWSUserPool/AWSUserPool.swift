@@ -18,7 +18,6 @@ class AWSUserPool {
     var userPasswordUpdateStatus: UserPasswordUpdateStatus?
     var userAuthenticationError: Observable<Error>?
     var userAuthenticationResult: Observable<SignInResult>?
-    var userSignUpResult: Observable<SignUpResult>?
     var userSignUpError: Observable<Error>?
     var updatePasswordWithConfirmationCodeError: Observable<Error>?
     var updatePasswordWithConfirmationCodeResult: Observable<ForgotPasswordResult>?
@@ -81,7 +80,16 @@ class AWSUserPool {
             })
             .disposed(by: disposeBag)
         userSignUpError = result.compactMap { $0.error }
-        userSignUpResult = result.compactMap { $0.element }
+    }
+
+    internal func resendCode(username: String) {
+        AWSMobileClient.default().resendSignUpCode(username: username, completionHandler: { (result, error) in
+            if let signUpResult = result {
+                print("A verification code has been sent via \(signUpResult.codeDeliveryDetails!.deliveryMedium) at \(signUpResult.codeDeliveryDetails!.destination!)")
+            } else if let error = error {
+                print("\(error.localizedDescription)")
+            }
+        })
     }
 
     internal func userLogin(userName: String, password: String) {

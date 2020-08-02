@@ -90,6 +90,7 @@ enum AWSControllers {
     static let forgotPasswordEmail = "awsForgotPasswordEmail"
     static let forgotPasswordUpdate = "awsForgotPasswordUpdate"
     static let awsUpdatedPasswordSuccess = "awsUpdatedPasswordSuccess"
+    static let awsSignUpUserSuccess = "awsSignUpUserSuccess"
 }
 
 enum UserAuthenticationState {
@@ -144,8 +145,11 @@ enum UpdatePasswordError {
 enum CreateAccountError {
 
     static let titlePassword = "Password"
+    static let titleSignUp = "Create Account Error"
     static let messagePasswordShort = "New Password Not Accepted: Too Short"
     static let messagePasswordComplexity = "New Password Not Accepted: Too Simple"
+    static let messageCreateAccountError = "Account Not Created, Please Try Again"
+    static let messageCreateAccountEmailReegistered = "This Email Has Already Been Registered"
 }
 
 enum UserPasswordUpdateStatus {

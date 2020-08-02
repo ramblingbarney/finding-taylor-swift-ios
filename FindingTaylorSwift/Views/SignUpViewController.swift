@@ -13,7 +13,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet var passwordOne: UITextField!
     @IBOutlet var passwordTwo: UITextField!
     @IBOutlet var createAccountButton: UIButton!
-
+    var emailAddressToValidate: String!
     weak var awsUserPoolSignUp: AWSUserPool!
 
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class SignUpViewController: UIViewController {
 
     @IBAction func createAccount(_ sender: UIButton) {
 
-        guard let emailAddressToValidate = emailAddress.text else { return }
+        self.emailAddressToValidate = emailAddress.text
         guard let passwordOneToValidate = passwordOne.text else { return }
         guard let passwordTwoToValidate = passwordTwo.text else { return }
 
@@ -65,6 +65,43 @@ class SignUpViewController: UIViewController {
             emailAddress.layer.borderWidth = 0
             passwordOne.layer.borderWidth = 0
             passwordTwo.layer.borderWidth = 0
+        }
+
+        _ = self.awsUserPoolSignUp.userSignUpError?
+            .subscribe({ errorText in
+                guard let elementContent = errorText.element?.localizedDescription else { return }
+
+                switch elementContent {
+                case "The operation couldn’t be completed. (AWSMobileClient.AWSMobileClientError error 8.)":
+                    self.transitionToLogin()
+                case "The operation couldn’t be completed. (AWSMobileClient.AWSMobileClientError error 24.)":
+                    self.showAlertResend(title: CreateAccountError.titleSignUp, message: CreateAccountError.messageCreateAccountEmailReegistered)
+                default:
+                    self.showAlert(title: CreateAccountError.titleSignUp, message: elementContent)
+                }
+            })
+    }
+
+    private func transitionToLogin() {
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+
+    private func showAlertResend(title: String, message: String) {
+
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "CANCEL", style: .cancel) { _ in
+
+            }
+            let RESENDAction = UIAlertAction(title: "Resend Confirmation Code", style: .default) { _ in
+
+                self.awsUserPoolSignUp.resendCode(username: self.emailAddressToValidate)
+            }
+            alertController.addAction(OKAction)
+            alertController.addAction(RESENDAction)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
 

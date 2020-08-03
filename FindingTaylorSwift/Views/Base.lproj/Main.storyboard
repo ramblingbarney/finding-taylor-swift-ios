@@ -239,11 +239,28 @@
                         <outlet property="emailAddress" destination="TMc-Me-npE" id="cK0-5o-Rad"/>
                         <outlet property="passwordOne" destination="lUF-0S-YuS" id="Fyz-5j-NEo"/>
                         <outlet property="passwordTwo" destination="W0a-Fv-9RJ" id="luJ-nj-k1M"/>
+                        <segue destination="4HW-Ho-4gM" kind="show" identifier="awsConfirmationCode" id="GSc-Q5-vzf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQB-al-LQ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-260" y="1919.1904047976013"/>
+        </scene>
+        <!--Confirmation Code View Controller-->
+        <scene sceneID="bO8-MT-ez3">
+            <objects>
+                <viewController id="4HW-Ho-4gM" customClass="ConfirmationCodeViewController" customModule="FindingTaylorSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2d3-Pd-eyr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="3hM-eX-L0q"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="POC-5T-yLo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UFo-zz-9O4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="543" y="1919"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="g79-n4-wvV">

@@ -90,6 +90,7 @@ enum AWSControllers {
     static let forgotPasswordEmail = "awsForgotPasswordEmail"
     static let forgotPasswordUpdate = "awsForgotPasswordUpdate"
     static let awsUpdatedPasswordSuccess = "awsUpdatedPasswordSuccess"
+    static let awsConfirmationCode = "awsConfirmationCode"
     static let awsSignUpUserSuccess = "awsSignUpUserSuccess"
 }
 

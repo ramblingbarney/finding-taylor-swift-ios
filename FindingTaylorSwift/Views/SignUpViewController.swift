@@ -73,7 +73,7 @@ class SignUpViewController: UIViewController {
 
                 switch elementContent {
                 case "The operation couldn’t be completed. (AWSMobileClient.AWSMobileClientError error 8.)":
-                    self.transitionToLogin()
+                    self.inputConfirmationCode()
                 case "The operation couldn’t be completed. (AWSMobileClient.AWSMobileClientError error 24.)":
                     self.showAlertResend(title: CreateAccountError.titleSignUp, message: CreateAccountError.messageCreateAccountEmailReegistered)
                 default:
@@ -81,23 +81,31 @@ class SignUpViewController: UIViewController {
                 }
             })
     }
+    
+    private func inputConfirmationCode() {
 
-    private func transitionToLogin() {
-        DispatchQueue.main.async {
-            self.navigationController?.popViewController(animated: true)
-        }
+        self.performSegue(withIdentifier: AWSControllers.awsConfirmationCode, sender: self)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == AWSControllers.awsConfirmationCode {
+            if let nextViewController = segue.destination as? ConfirmationCodeViewController {
+                nextViewController.awsUserPoolConfirmationCode = awsUserPoolSignUp
+            }
+        }
+    }
+    
     private func showAlertResend(title: String, message: String) {
 
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let OKAction = UIAlertAction(title: "CANCEL", style: .cancel) { _ in
+            let OKAction = UIAlertAction(title: "OK", style: .cancel) { _ in
 
             }
             let RESENDAction = UIAlertAction(title: "Resend Confirmation Code", style: .default) { _ in
 
                 self.awsUserPoolSignUp.resendCode(username: self.emailAddressToValidate)
+                self.inputConfirmationCode()
             }
             alertController.addAction(OKAction)
             alertController.addAction(RESENDAction)

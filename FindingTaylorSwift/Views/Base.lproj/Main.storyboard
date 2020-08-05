@@ -253,14 +253,54 @@
                     <view key="view" contentMode="scaleToFill" id="2d3-Pd-eyr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteShirtDoorIcon" translatesAutoresizingMaskIntoConstraints="NO" id="jGY-VD-KYg">
+                                <rect key="frame" x="137.5" y="20" width="100" height="1"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Confirmation Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yYX-ko-QlC">
+                                <rect key="frame" x="78.5" y="29" width="218" height="34"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KpF-dw-PeV">
+                                <rect key="frame" x="79" y="71" width="217" height="32"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Submit">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="17" name="SFProRounded-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.66666666669999997" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="KpF-dw-PeV" firstAttribute="leading" secondItem="3hM-eX-L0q" secondAttribute="leading" constant="79" id="0xw-DO-0o5"/>
+                            <constraint firstItem="jGY-VD-KYg" firstAttribute="top" secondItem="3hM-eX-L0q" secondAttribute="top" constant="20" id="4ks-oo-Dtm"/>
+                            <constraint firstItem="3hM-eX-L0q" firstAttribute="trailing" secondItem="yYX-ko-QlC" secondAttribute="trailing" constant="78.5" id="PyP-55-R4u"/>
+                            <constraint firstItem="3hM-eX-L0q" firstAttribute="trailing" secondItem="KpF-dw-PeV" secondAttribute="trailing" constant="79" id="Rz4-H4-Vs1"/>
+                            <constraint firstItem="KpF-dw-PeV" firstAttribute="top" secondItem="yYX-ko-QlC" secondAttribute="bottom" constant="8" id="T1r-eX-w56"/>
+                            <constraint firstItem="3hM-eX-L0q" firstAttribute="trailing" secondItem="jGY-VD-KYg" secondAttribute="trailing" constant="137.5" id="n2t-yZ-fV6"/>
+                            <constraint firstItem="jGY-VD-KYg" firstAttribute="leading" secondItem="3hM-eX-L0q" secondAttribute="leading" constant="137.5" id="nc7-2h-wc7"/>
+                            <constraint firstItem="yYX-ko-QlC" firstAttribute="leading" secondItem="3hM-eX-L0q" secondAttribute="leading" constant="78.5" id="s4k-JF-UsC"/>
+                            <constraint firstItem="yYX-ko-QlC" firstAttribute="top" secondItem="jGY-VD-KYg" secondAttribute="bottom" constant="8" id="zeS-4n-PeI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3hM-eX-L0q"/>
                     </view>
                     <navigationItem key="navigationItem" id="POC-5T-yLo"/>
+                    <connections>
+                        <segue destination="x7I-2Y-kGx" kind="show" identifier="awsSignUpUserSuccess" id="geX-qZ-8yZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UFo-zz-9O4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="543" y="1919"/>
+            <point key="canvasLocation" x="541.60000000000002" y="1918.2908545727139"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="g79-n4-wvV">
@@ -592,6 +632,6 @@ and your new password</string>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CaU-D8-Zfl"/>
+        <segue reference="geX-qZ-8yZ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -19,6 +19,8 @@ class AWSUserPool {
     var userAuthenticationError: Observable<Error>?
     var userAuthenticationResult: Observable<SignInResult>?
     var userSignUpError: Observable<Error>?
+    var userConfirmSignUpError: Observable<Error>?
+    var userConfirmSignUpResult: Observable<SignUpResult>?
     var updatePasswordWithConfirmationCodeError: Observable<Error>?
     var updatePasswordWithConfirmationCodeResult: Observable<ForgotPasswordResult>?
     var awsUserNameEmail: String?
@@ -72,8 +74,8 @@ class AWSUserPool {
                     print("User is signed up and confirmed.")
                 case .unconfirmed:
                     print("User is not confirmed and needs verification via \(signUpResult.codeDeliveryDetails!.deliveryMedium) sent at \(signUpResult.codeDeliveryDetails!.destination!)")
-//                case .unknown:
-//                    print("Unexpected case")
+                    //                case .unknown:
+                //                    print("Unexpected case")
                 default:
                     print("Unexpected case")
                 }
@@ -90,6 +92,31 @@ class AWSUserPool {
                 print("\(error.localizedDescription)")
             }
         })
+    }
+
+    internal func confirmSignUp(username: String, confirmationCode: String) {
+
+        let result = AWSMobileClient.default().rx.confirmSignUp(username: username, confirmationCode: confirmationCode)
+            .materialize()
+
+        result
+            .compactMap { $0.element }
+            .subscribe(onNext: { signUpResult in
+                switch signUpResult.signUpConfirmationState {
+                case .confirmed:
+                    print("User is signed up and confirmed.")
+                case .unconfirmed:
+                    print("User is not confirmed and needs verification via \(signUpResult.codeDeliveryDetails!.deliveryMedium) sent at \(signUpResult.codeDeliveryDetails!.destination!)")
+                case .unknown:
+                    print("Unexpected case")
+                default:
+                    print("Sign In needs info which is not yet supported.")
+                }
+            })
+            .disposed(by: disposeBag)
+        userConfirmSignUpError = result.compactMap { $0.error }
+        userConfirmSignUpResult = result.compactMap { $0.element }
+
     }
 
     internal func userLogin(userName: String, password: String) {
@@ -180,6 +207,20 @@ extension Reactive where Base: AWSMobileClient {
     func signUp(username: String, password: String) -> Observable<SignUpResult> {
         return Observable.create { observer in
             self.base.signUp(username: username, password: password) { (signUpResult, error) in
+                if let signUpResult = signUpResult {
+                    observer.onNext(signUpResult)
+                    observer.onCompleted()
+                } else {
+                    observer.onError(error ?? RxError.unknown)
+                }
+            }
+            return Disposables.create()
+        }
+    }
+
+    func confirmSignUp(username: String, confirmationCode: String) -> Observable<SignUpResult> {
+        return Observable.create { observer in
+            self.base.confirmSignUp(username: username, confirmationCode: confirmationCode) { (signUpResult, error) in
                 if let signUpResult = signUpResult {
                     observer.onNext(signUpResult)
                     observer.onCompleted()

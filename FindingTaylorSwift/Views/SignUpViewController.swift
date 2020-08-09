@@ -81,20 +81,22 @@ class SignUpViewController: UIViewController {
                 }
             })
     }
-    
-    private func inputConfirmationCode() {
 
-        self.performSegue(withIdentifier: AWSControllers.awsConfirmationCode, sender: self)
+    private func inputConfirmationCode() {
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: AWSControllers.awsConfirmationCode, sender: self)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == AWSControllers.awsConfirmationCode {
             if let nextViewController = segue.destination as? ConfirmationCodeViewController {
                 nextViewController.awsUserPoolConfirmationCode = awsUserPoolSignUp
+                nextViewController.userName = self.emailAddressToValidate
             }
         }
     }
-    
+
     private func showAlertResend(title: String, message: String) {
 
         DispatchQueue.main.async {
